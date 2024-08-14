@@ -1,0 +1,138 @@
+
+/**** debut navbar *****/
+
+
+.navis {
+    background-color: #415846 ; 
+    
+}
+
+
+
+.navis a {
+    color:black;
+}
+
+
+.navis .barre {
+    color: white;
+}
+
+
+
+.navis ul {
+    color: black;
+}
+
+
+
+
+
+.navis a:hover {
+    background-color:#132D21;
+    color: #F9DA36;
+
+}
+
+
+
+.navis button {
+    background-color:#132D21;
+
+}
+
+
+
+
+
+/****** fin header *****/
+/**** debut corp *****/
+
+
+
+.container {
+
+    font-family: "lato" , sans-serif;
+    margin: 50px 0px;
+    padding: 10%;
+    text-align: center;
+    justify-content: center;
+    background-color: #132D21;
+    border-radius: 2%;
+}
+
+
+
+.divider {                  
+    width: 100px;
+    height:2px;
+    background:#F9DA36;
+    margin: 0 auto;
+
+}
+
+
+.heading {
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 2%;
+    color:#F9DA36;
+
+}
+
+
+
+
+form {
+    background: #415846;
+    padding: 5%;
+    border-radius: 3%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.check button {
+    background-color: black;
+    color: #F9DA36;
+}
+
+.check button:hover {
+    background-color: #F9DA36;
+
+}
+
+
+
+
+
+@media screen and (min-width:992px) {
+
+    .navis a {
+        color: white;
+    }
+
+}
+
+
+@media screen and (min-width:1200px) {
+
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form {
+        display: flex;
+        align-items: center;   
+
+    }
+
+
+    
+}

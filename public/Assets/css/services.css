@@ -1,0 +1,194 @@
+*{
+    padding: 0;
+    text-decoration: none;
+    margin: 0;
+}
+
+/****** debut header *****/
+
+
+
+
+.navis {
+    background-color: #415846 ; 
+    
+}
+
+
+
+
+
+.navis a {
+    color:black;
+}
+
+
+.navis .barre {
+    color: white;
+}
+
+
+
+.navis ul {
+    color: black;
+}
+
+
+
+
+
+.navis a:hover {
+    background-color:#132D21;
+    color: #F9DA36;
+
+}
+
+
+
+.navis button {
+    background-color:#132D21;
+
+}
+
+
+
+/********* section train activity *********/
+
+#service {
+    background-color: #132D21;
+    padding: 5%;
+
+
+}
+
+.debut h1{
+    color: #F9DA36;
+    text-align: center;
+    padding: 2%;
+    letter-spacing: 2px;
+
+}
+
+
+.train img {
+    width: 450px;
+    height: 350px;
+    border-radius: 5%;
+}
+
+
+.safari {
+    color: white;
+    display: flex;
+    flex-direction:row-reverse;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-around;
+    letter-spacing: 2px;
+    line-height: 30px;
+    margin: 3%;
+    text-align: center;
+
+
+}
+
+
+
+#food{
+    background-color: #415846;
+    padding: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+
+
+
+}
+
+
+
+.fast {
+
+    color: white;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    letter-spacing: 2px;
+    margin: 3%;
+
+}
+
+
+.resto img {
+    width: 450px;
+    height: 350px;
+    border-radius: 5%;
+}
+
+
+
+#vétérinaire {
+    background-color: #132D21;
+    padding: 5%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+
+
+
+.veto img{
+    width: 450px;
+    height: 350px;
+    border-radius: 5%;
+}
+
+
+.soigneur {
+
+    color: white;
+    display: flex;
+    flex-direction:column;
+    justify-items: center;
+    letter-spacing: 2px;
+    margin: 3%;
+    padding: 2%;
+    text-align: center;
+}
+
+
+
+
+
+
+.retour button {
+    background-color: black;
+    color: #F9DA36;
+
+}
+
+
+.pied {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1%;
+}
+
+.reso h6 {
+    font-weight: bold;
+    color:#132D21
+}
+
+
+
+.reso img{
+        width: 30px;
+        height: 30px;
+        color:rgb(3, 3, 3);
+        cursor: pointer;
+        
+    
+}

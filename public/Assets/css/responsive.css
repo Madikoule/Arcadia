@@ -1,0 +1,295 @@
+
+@media screen and (min-width:320px) {
+    .cover img {
+        width: 100%;
+        height: 300px;
+    }
+
+
+
+    .slide1 .carousel{
+        width: 310px;
+        height: 300px;
+        padding: 2%;
+    
+    }
+
+
+    .vert p{
+        font-weight:lighter;
+    }
+
+
+    .text1 p {
+        font-size:18px;
+    }
+
+
+    .titre3 {
+        margin: 5%;
+    }
+
+    .title {
+        position: none;
+    }
+
+
+    .ouverture {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+
+
+    .ouverture .jour {
+        font-size:x-large;
+    }
+
+
+    .ouverture .adress {
+        font-weight:400;
+        font-size:large;
+        color: white;
+    }
+
+}
+
+
+
+
+@media screen and (min-width:576px) {
+    .cover img{
+        width:100%;
+        height:450px;
+    }
+
+
+
+    .slide1 .carousel{
+        width: 500px;
+        height: 450px;
+    
+    }
+
+    .slide1 h5 {
+        padding: 3%;
+    }
+
+    .title {
+        position: none;
+    }
+
+
+
+    .text1 p {
+        font-size:20px;
+    }
+
+
+
+}
+
+
+
+@media screen and (min-width:768px) {
+
+    .cover img {
+        width:100%;
+        height:550px;
+    }
+
+    
+    .title {
+        position: absolute;
+        padding-top: 40%;
+        font-weight: bold;
+        font-size: x-large;
+
+    }
+
+
+    .titre2 h2 {
+        font-weight: bold;
+    }
+
+
+
+    .text1 p {
+        font-size:22px;
+    }
+
+
+
+
+    .vert {
+        display: flex;
+        flex-wrap:nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .ouverture {
+        display: flex;
+        padding: 0%;
+    }
+
+
+    .decouverte img{
+        width: 550px;
+        height: 450px;
+    }
+
+
+    .horaire h4 {
+        padding: 5%;
+    }
+
+
+
+    .slide1 .carousel{
+        width: 600px;
+        height: 500px;
+    
+    }
+
+    .animaux {
+        display: flex;
+        justify-content: space-around;
+        text-align:center;
+        flex-wrap: wrap;
+        flex-direction:row-reverse;
+        align-items: flex-end;
+    }
+
+
+}   
+
+
+
+
+    
+@media screen and (min-width:992px) {
+
+    .cover img {
+        width: 100%;
+        height:500px;
+    }
+
+
+    .decouverte img{
+        width: 600px;
+        height: 500px;
+    }
+
+
+
+    .text1 p {
+        font-size:22px;
+    }
+
+
+    .title {
+        font-weight: bold;
+
+    }
+
+    .vert {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+
+
+    .navis a {
+        color: white;
+    }
+
+
+
+    .animaux img {
+        height: 300px;
+
+    }
+
+
+    .slide1 .carousel1{
+        height: 450px;
+    
+    }
+
+    .vert p{
+        font-weight:normal;
+    }
+
+
+
+    .ouverture  {
+        font-weight:400;
+        font-size:large;
+        color: white;
+        text-align: center;
+    }
+
+
+}
+
+
+
+@media screen and (min-width:1200px) {
+    
+    .cover img {
+            width: 100%;
+            height: 650px;
+        
+    }
+
+
+
+    .decouverte img{
+        width: 700px;
+        height: 550px;
+    }
+
+
+    .title {
+        font-weight: bold;
+        padding-top: 60%;
+
+    }
+
+
+    .animaux img {
+        height: 300px;
+    }
+
+
+
+
+    .slide1 .carousel1 {
+        height: 450px;
+    
+    }
+
+
+
+    .text1 p {
+        font-size:22px;
+
+    }
+
+
+
+    .vert p{
+        font-weight:normal;
+
+
+    }
+
+}
+
+
