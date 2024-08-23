@@ -1,4 +1,26 @@
 
+<?php 
+
+$habitats = [
+    0 => [
+        'image' => '../../Public/Assets/image/Habitat/savane.jpeg',
+        'name' => ' La Savane ',
+
+    ],
+
+    1 => [
+        'image' => '../../Public/Assets/image/Habitat/jungle.jpg',
+        'name' => 'Jungle',
+    ],
+
+
+    2 => [
+        'image' => '../../Public/Assets/image/Activity/marai-visite.jpeg',
+        'name' => 'Marais',
+    ],
+];
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -66,23 +88,15 @@
             </div>
 
 
-                <article class="terre" class="container">
+            <article class="terre" class="container">
+                    <?php foreach ($habitats as $habitat) { ?>
                     <a href=".." ><figure class="figure">
-                        <img src="../../Public/Assets/image/Habitat/savane.jpeg" class="figure-img img-fluid rounded" alt="La Savane">
-                        <figcaption class="figure-caption"> La Savane </figcaption>
+                        <img src="<?php echo $habitat['image'] ?>" class="figure-img img-fluid rounded" alt="<?php echo $habitat['name'] ?>">
+                        <figcaption class="figure-caption"><?php echo $habitat['name'] ?></figcaption>
                     </figure></a>
-                
-                    <a href="..."><figure class="tropique">
-                        <img src="../../Public/Assets/image/Habitat/jungle.jpg" class="figure-img img-fluid rounded" alt="La Jungle">
-                        <figcaption class="figure-caption"> Jungle </figcaption>
-                    </figure></a>
-        
-                    <a href="..."><figure class="Hiver">
-                        <img src="../../Public/Assets/image/Activity/marai-visite.jpeg" class="figure-img img-fluid rounded" alt="Marais">
-                        <figcaption class="figure-caption"> Marais </figcaption>
-                    </figure></a>
+                <?php } ?>
                 </div>    
-        </article>
+            </article>
     </section>
     
             </div> 
