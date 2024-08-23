@@ -1,3 +1,48 @@
+<?php
+
+
+
+$animals = [
+    0 => [
+        'name' => 'Gibbon au main blanches',
+        'description' => 'Présent dans notre zoo <br> depuis  l\'Age de deux ans',
+        'image' => '../../Public/Assets/image/Animaux/Gibbon-a-mains-blanches-3.jpg',
+        'title' => 'Oyopi',
+        'habitat' => 'Forêts tropicales, Asie',
+        'age' => ' 14 ans',
+        'race' => 'Hylobates lar ',
+    ],
+
+    1 => [
+        'name' => 'Kamel & Kamoss',
+        'description' => 'Les GIRAFES INSÉPARABLES <br> depuis l\'Afrique .',
+        'image' => '../../Public/Assets/image/Animaux/Girafas_1.jpeg',
+        'title' => 'Kamel & Kamoss',
+        'habitat' => ' Savanes, Afrique',
+        'age' => '4 ans' ,
+        'race' => 'Giraffa camelopardalis',
+    ],
+
+    2 => [
+        'name'=> 'Crocodile du Nil',
+        'description' =>  'l\'incontournable <br>Niloticus .',
+        'image' => '../../Public/Assets/image/Animaux/crocodile du nil.webp',
+        'title' => 'Gasper',
+        'habitat' => 'Marais , rivières et lacs en Afrique subsaharienne.',
+        'age' => ' 35 ans' ,
+        'race' => ' Crocodylus Niloticus' ,
+    ]
+    ];
+
+
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -148,61 +193,30 @@
         <div class="titl2">
                     <h3>Nos Animaux Terrestres </h3>
                 </div>
+
             <div class="animaux">
+            <?php foreach ($animals as $index => $animal) { ?>
+
                 <div class="panda">
-                    <img src="../../Public/Assets/image/Animaux/Gibbon-a-mains-blanches-3.jpg" class="img-fluid" alt="panda">
+                    <img src=" <?php echo $animal ['image'] ;?> " class="img-fluid" alt="Gibbon">
                     <div class="name1">
-                        <h4>Gibbon a main blanches</h4>
-                            <p>Présent dans notre zoo <br> depuis l'age de deux ans.</p>
-                        <button onclick="openPopup('popup1')">Voir plus d'infos</button>
+                        <h4><?php echo $animal['name'];?> </h4>
+                            <p><?php echo $animal['description'];?> </p>
+                        <button onclick="openPopup('popup<?php echo $index; ?>')">Voir plus d'infos</button>
                     </div>
-                    <div id="popup1" class="popup">
+
+
+                    <div id="popup<?php echo $index;?>" class="popup">
                         <div class="popup-content">
-                            <span class="close" onclick="closePopup('popup1')">&times;</span>
-                                <h2>Oyopi</h2>
-                                    <p><strong>Habitat :</strong> Forêts tropicales, Asie</p>
-                                    <p><strong>Âge :</strong> 14 ans</p>
-                                    <p><strong>Race :</strong>Hylobates lar </p>
+                            <span class="close" onclick="closePopup('popup<?php echo $index; ?>')">&times;</span>
+                                <h2><?php echo $animal['title'];?></h2>
+                                    <p><strong>Habitat :</strong> <?php echo $animal['habitat'];?></p>
+                                    <p><strong>Âge :</strong><?php echo $animal['age'];?></p>
+                                    <p>Race :</strong><?php echo $animal['race'];?></p>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="girafe">
-                            <img src="../../Public/Assets/image/Animaux/Girafas_1.jpeg" class="img-fluid" alt="Girafe">
-                            <div class="name2">
-                                <h4>Kamel & Kamoss</h4>
-                                <p>Les GIRAFES INSÉPARABLES <br> depuis l'Afrique .</p>
-                                <button onclick="openPopup('popup2')">Voir plus d'infos</button>
-                            </div>
-                            <div id="popup2" class="popup">
-                                <div class="popup-content">
-                                    <span class="close" onclick="closePopup('popup2')">&times;</span>
-                                    <h2>Kamel & Kamoss</h2>
-                                        <p><strong>Habitat :</strong> Savanes, Afrique</p>
-                                        <p><strong>Âge :</strong> 4 ans</p>
-                                        <p><strong>Race :</strong> Giraffa camelopardalis</p>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                        <div class="komodo">
-                            <img src="../../Public/Assets/image/Animaux/crocodile du nil.webp" class="img-fluid" alt="dragon">
-                                <h4>Crocodile du Nil</h4>
-                                <p> L'incontournable <br>Niloticus .</p>
-                            <button onclick="openPopup('popup3')">Voir plus d'infos</button>
-                        </div>
-
-                        <div id="popup3" class="popup">
-                            <div class="popup-content">
-                                <span class="close" onclick="closePopup('popup3')">&times;</span>
-                                <h2>Gasper</h2>
-                                    <p><strong>Habitat :</strong> Marais , rivières et lacs en Afrique subsaharienne.</p>
-                                    <p><strong>Âge :</strong> 35 ans</p>
-                                    <p><strong>Race :</strong> Crocodylus niloticus</p>
-                            </div>
-                        </div>
+                        <?php } ?>
                     </div>
             </section>
 

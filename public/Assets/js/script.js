@@ -7,7 +7,7 @@
     }
 
     function closePopup(popupId) {
-        document.getElementById(popupId).style.display = 'none';
+        document.getElementById(popupiD).style.display = 'none';
 
     }
 
