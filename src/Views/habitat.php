@@ -1,22 +1,35 @@
 
 <?php 
 
+
+
+
+
+
+
+
+
+
+
 $habitats = [
     0 => [
         'image' => '../../Public/Assets/image/Habitat/savane.jpeg',
         'name' => ' La Savane ',
+        'description' => 'La savane est un biome tropical avec de vastes prairies, quelques arbres, un climat chaud, et une alternance de saisons sèches et humides. Elle abrite une faune diversifiée, incluant des herbivores comme les zèbres et des prédateurs comme les lions.',
 
     ],
 
     1 => [
         'image' => '../../Public/Assets/image/Habitat/jungle.jpg',
         'name' => 'Jungle',
+        'description' => 'La jungle est un biome tropical dense et humide, riche en biodiversité. Elle se caractérise par une végétation luxuriante, des arbres hauts, et une faune variée, incluant oiseaux, insectes, reptiles, et grands prédateurs.',
     ],
 
 
     2 => [
         'image' => '../../Public/Assets/image/Activity/marai-visite.jpeg',
         'name' => 'Marais',
+        'description' => 'Le marais est un biome humide avec des sols saturés en eau. Il est dominé par des plantes aquatiques, des roseaux et abrite une faune variée, notamment des amphibiens, des oiseaux, et des insectes.',
     ],
 ];
 
@@ -94,6 +107,7 @@ $habitats = [
                         <img src="<?php echo $habitat['image'] ?>" class="figure-img img-fluid rounded" alt="<?php echo $habitat['name'] ?>">
                         <figcaption class="figure-caption"><?php echo $habitat['name'] ?></figcaption>
                     </figure></a>
+                    <p><?php echo $habitat['description'] ?></p>
                 <?php } ?>
                 </div>    
             </article>
