@@ -842,6 +842,6 @@ class __TwigTemplate_1fe6098d99abab67dfd756b048792038 extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/mailer.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Projet-zoo/projet-zoo/vendor/symfony/web-profiler-bundle/Resources/views/Collector/mailer.html.twig");
+", "@WebProfiler/Collector/mailer.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Arcadia/vendor/symfony/web-profiler-bundle/Resources/views/Collector/mailer.html.twig");
     }
 }

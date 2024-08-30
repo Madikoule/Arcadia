@@ -6,8 +6,17 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controllers\\AccueilController' => $baseDir . '/src/Controllers/AccueilController.php',
+    'App\\Entity\\CommentaireHabitat' => $baseDir . '/src/Entity/CommentaireHabitat.php',
+    'App\\Entity\\Contact' => $baseDir . '/src/Entity/Contact.php',
+    'App\\Entity\\Service' => $baseDir . '/src/Entity/Service.php',
+    'App\\Entity\\Statistique' => $baseDir . '/src/Entity/Statistique.php',
     'App\\Entity\\Utilisateur' => $baseDir . '/src/Entity/Utilisateur.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
+    'App\\Repository\\CommentaireHabitatRepository' => $baseDir . '/src/Repository/CommentaireHabitatRepository.php',
+    'App\\Repository\\ContactRepository' => $baseDir . '/src/Repository/ContactRepository.php',
+    'App\\Repository\\ServiceRepository' => $baseDir . '/src/Repository/ServiceRepository.php',
+    'App\\Repository\\StatistiqueRepository' => $baseDir . '/src/Repository/StatistiqueRepository.php',
     'App\\Repository\\UtilisateurRepository' => $baseDir . '/src/Repository/UtilisateurRepository.php',
     'Collator' => $vendorDir . '/symfony/polyfill-intl-icu/Resources/stubs/Collator.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',

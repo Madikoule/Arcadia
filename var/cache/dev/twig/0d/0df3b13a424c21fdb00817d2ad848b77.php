@@ -240,6 +240,6 @@ class __TwigTemplate_83567c133acfefb812f1021506e81c1e extends Template
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/exception.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Projet-zoo/projet-zoo/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
+", "@WebProfiler/Collector/exception.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Arcadia/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
     }
 }

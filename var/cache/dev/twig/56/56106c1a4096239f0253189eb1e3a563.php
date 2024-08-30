@@ -90,6 +90,6 @@ class __TwigTemplate_c7b0255a7b09a25b13091cede8e198a7 extends Template
     public function getSourceContext()
     {
         return new Source("{% block panel '' %}
-", "@WebProfiler/Profiler/ajax_layout.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Projet-zoo/projet-zoo/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/ajax_layout.html.twig");
+", "@WebProfiler/Profiler/ajax_layout.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Arcadia/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/ajax_layout.html.twig");
     }
 }

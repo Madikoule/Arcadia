@@ -212,7 +212,7 @@ $animals = [
                                 <h2><?php echo $animal['title'];?></h2>
                                     <p><strong>Habitat :</strong> <?php echo $animal['habitat'];?></p>
                                     <p><strong>Âge :</strong><?php echo $animal['age'];?></p>
-                                    <p>Race :</strong><?php echo $animal['race'];?></p>
+                                    <p><strong>Race :</strong><?php echo $animal['race'];?></p>
                                 </div>
                             </div>
                         </div>

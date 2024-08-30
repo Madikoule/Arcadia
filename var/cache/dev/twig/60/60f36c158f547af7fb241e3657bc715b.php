@@ -490,6 +490,6 @@ class __TwigTemplate_a4f645054e5215cbde8d0ac6e6e714da extends Template
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Projet-zoo/projet-zoo/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Arcadia/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
     }
 }

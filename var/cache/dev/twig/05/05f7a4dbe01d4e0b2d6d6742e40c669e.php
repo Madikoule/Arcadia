@@ -1850,6 +1850,6 @@ class __TwigTemplate_25790e83d360a43c11f89ccdd79fb0ec extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Projet-zoo/projet-zoo/vendor/doctrine/doctrine-bundle/templates/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Arcadia/vendor/doctrine/doctrine-bundle/templates/Collector/db.html.twig");
     }
 }

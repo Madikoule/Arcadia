@@ -428,6 +428,6 @@ class __TwigTemplate_3f3ea32588162c71c6aba5d85d5daff4 extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@Debug/Profiler/dump.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Projet-zoo/projet-zoo/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
+", "@Debug/Profiler/dump.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Arcadia/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
     }
 }

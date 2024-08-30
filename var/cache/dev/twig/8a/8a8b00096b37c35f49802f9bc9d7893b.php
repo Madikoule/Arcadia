@@ -80,6 +80,6 @@ class __TwigTemplate_0851196de12b396eb9e0dda88b20261a extends Template
     <path d=\"M4 6v6a8 3 0 0 0 16 0v-6\"></path>
     <path d=\"M4 12v6a8 3 0 0 0 16 0v-6\"></path>
 </svg>
-", "@Doctrine/Collector/database.svg", "/Applications/XAMPP/xamppfiles/htdocs/Projet-zoo/projet-zoo/vendor/doctrine/doctrine-bundle/templates/Collector/database.svg");
+", "@Doctrine/Collector/database.svg", "/Applications/XAMPP/xamppfiles/htdocs/Arcadia/vendor/doctrine/doctrine-bundle/templates/Collector/database.svg");
     }
 }

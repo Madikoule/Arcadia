@@ -80,6 +80,6 @@ class __TwigTemplate_a950b468e6d316e268228f10a134bea6 extends Template
     <line x1=\"7\" y1=\"7\" x2=\"7\" y2=\"17\"></line>
     <line x1=\"4\" y1=\"8\" x2=\"4\" y2=\"16\"></line>
 </svg>
-", "@DoctrineMigrations/Collector/icon-v3.svg", "/Applications/XAMPP/xamppfiles/htdocs/Projet-zoo/projet-zoo/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/icon-v3.svg");
+", "@DoctrineMigrations/Collector/icon-v3.svg", "/Applications/XAMPP/xamppfiles/htdocs/Arcadia/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/icon-v3.svg");
     }
 }

@@ -546,8 +546,17 @@ class ComposerStaticInitf2f3ea2b52dc1dc543fcff270d9d2335
     );
 
     public static $classMap = array (
+        'App\\Controllers\\AccueilController' => __DIR__ . '/../..' . '/src/Controllers/AccueilController.php',
+        'App\\Entity\\CommentaireHabitat' => __DIR__ . '/../..' . '/src/Entity/CommentaireHabitat.php',
+        'App\\Entity\\Contact' => __DIR__ . '/../..' . '/src/Entity/Contact.php',
+        'App\\Entity\\Service' => __DIR__ . '/../..' . '/src/Entity/Service.php',
+        'App\\Entity\\Statistique' => __DIR__ . '/../..' . '/src/Entity/Statistique.php',
         'App\\Entity\\Utilisateur' => __DIR__ . '/../..' . '/src/Entity/Utilisateur.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\CommentaireHabitatRepository' => __DIR__ . '/../..' . '/src/Repository/CommentaireHabitatRepository.php',
+        'App\\Repository\\ContactRepository' => __DIR__ . '/../..' . '/src/Repository/ContactRepository.php',
+        'App\\Repository\\ServiceRepository' => __DIR__ . '/../..' . '/src/Repository/ServiceRepository.php',
+        'App\\Repository\\StatistiqueRepository' => __DIR__ . '/../..' . '/src/Repository/StatistiqueRepository.php',
         'App\\Repository\\UtilisateurRepository' => __DIR__ . '/../..' . '/src/Repository/UtilisateurRepository.php',
         'Collator' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/Resources/stubs/Collator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',

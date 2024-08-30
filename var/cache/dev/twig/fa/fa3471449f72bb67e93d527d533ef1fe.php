@@ -81,6 +81,6 @@ class __TwigTemplate_54e6f47caf7d4ab5afb78bc041ded019 extends Template
     public function getSourceContext()
     {
         return new Source("{% extends \"@email/zurb_2/notification/body.html.twig\" %}
-", "@email/default/notification/body.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Projet-zoo/projet-zoo/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.html.twig");
+", "@email/default/notification/body.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/Arcadia/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.html.twig");
     }
 }

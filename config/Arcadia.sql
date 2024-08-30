@@ -90,7 +90,7 @@ CREATE TABLE rapport (
 	
 
 	INSERT INTO  animal (name_animal, race_animal, habita_animal, age_animal, description_animal)VALUES 
-	('Kamel & Kamoss', ' Giraffa camelopardalis', 'La Savane' ,'4' , 'Les Girafes inséparables depuis le continent d/Afrique .'),
+	('Kamel & Kamoss', ' Giraffa Camelopardalis', 'La Savane' ,'4' , 'Les Girafes inséparables depuis le continent d/Afrique .'),
 	('Gibbon Oyopi','Hylobates lar','Forêts tropicales, Asie','14' ,'Présent dans le Zoo depuis l/age de deux ans .'),
 	('Gasper le Crocodile','Crocodylus niloticus','Marais , rivières et lacs en Afrique subsaharienne','35', 'Découvré l/incontournable Niloticus du Zoo , c/est une exception de l/avoir parmis nous .');
 
@@ -98,7 +98,7 @@ CREATE TABLE rapport (
 
 	INSERT INTO utilisateur (name_user, firstname_user, password_user, email_user, id_roles) VALUES
 	('Doucoure', 'Mady', 'arcadia123', 'madydouc@yahoo.com', 1),
-	('admini', 'admini', 'password789', 'admini789@example.com', 1);
+	('admini', 'passy', 'password789', 'admini789@example.com', 1);
 		
 
 	INSERT INTO services (name_service, s_description) VALUES
