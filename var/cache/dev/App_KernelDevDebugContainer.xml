@@ -345,6 +345,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\ImageRepository" class="App\Repository\ImageRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\NourritureRepository" class="App\Repository\NourritureRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -3960,7 +3964,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.yFste2."/>
+      <argument type="service" id=".service_locator.kMqJ8OW"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5759,6 +5763,8 @@
     <service id=".abstract.instanceof.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HabitatRepository" class="App\Repository\HabitatRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\HabitatRepository" class="App\Repository\HabitatRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ImageRepository" class="App\Repository\ImageRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ImageRepository" class="App\Repository\ImageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\NourritureRepository" class="App\Repository\NourritureRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\NourritureRepository" class="App\Repository\NourritureRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RapportRepository" class="App\Repository\RapportRepository" autowire="true" abstract="true"/>
@@ -6403,13 +6409,14 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.yFste2." class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.kMqJ8OW" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AnimalRepository" type="service_closure" id="App\Repository\AnimalRepository"/>
         <argument key="App\Repository\CommentaireHabitatRepository" type="service_closure" id="App\Repository\CommentaireHabitatRepository"/>
         <argument key="App\Repository\ContactRepository" type="service_closure" id="App\Repository\ContactRepository"/>
         <argument key="App\Repository\HabitatRepository" type="service_closure" id="App\Repository\HabitatRepository"/>
+        <argument key="App\Repository\ImageRepository" type="service_closure" id="App\Repository\ImageRepository"/>
         <argument key="App\Repository\NourritureRepository" type="service_closure" id="App\Repository\NourritureRepository"/>
         <argument key="App\Repository\RapportRepository" type="service_closure" id="App\Repository\RapportRepository"/>
         <argument key="App\Repository\ServiceRepository" type="service_closure" id="App\Repository\ServiceRepository"/>
