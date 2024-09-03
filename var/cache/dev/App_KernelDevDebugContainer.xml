@@ -181,6 +181,7 @@
     <parameter key="doctrine.orm.naming_strategy.underscore.class">Doctrine\ORM\Mapping\UnderscoreNamingStrategy</parameter>
     <parameter key="doctrine.orm.quote_strategy.default.class">Doctrine\ORM\Mapping\DefaultQuoteStrategy</parameter>
     <parameter key="doctrine.orm.quote_strategy.ansi.class">Doctrine\ORM\Mapping\AnsiQuoteStrategy</parameter>
+    <parameter key="doctrine.orm.typed_field_mapper.default.class">Doctrine\ORM\Mapping\DefaultTypedFieldMapper</parameter>
     <parameter key="doctrine.orm.entity_listener_resolver.class">Doctrine\Bundle\DoctrineBundle\Mapping\ContainerEntityListenerResolver</parameter>
     <parameter key="doctrine.orm.second_level_cache.default_cache_factory.class">Doctrine\ORM\Cache\DefaultCacheFactory</parameter>
     <parameter key="doctrine.orm.second_level_cache.default_region.class">Doctrine\ORM\Cache\Region\DefaultRegion</parameter>
@@ -327,12 +328,24 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
-    <service id="App\Controller\AccueilController" class="App\Controller\AccueilController" autowire="true" autoconfigure="true"/>
+    <service id="App\Controllers\AccueilController" class="App\Controllers\AccueilController" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\CommentaireHabitatRepository" class="App\Repository\CommentaireHabitatRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\HabitatRepository" class="App\Repository\HabitatRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\NourritureRepository" class="App\Repository\NourritureRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\RapportRepository" class="App\Repository\RapportRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -3831,20 +3844,8 @@
       </call>
       <call method="setMiddlewares">
         <argument type="collection">
-          <argument type="service">
-            <service class="Doctrine\DBAL\Logging\Middleware">
-              <argument type="service" id="monolog.logger.doctrine"/>
-            </service>
-          </argument>
-          <argument type="service">
-            <service class="Doctrine\Bundle\DoctrineBundle\Middleware\DebugMiddleware">
-              <argument type="service" id="doctrine.debug_data_holder"/>
-              <argument type="service" id="debug.stopwatch" on-invalid="null"/>
-              <call method="setConnectionName">
-                <argument>default</argument>
-              </call>
-            </service>
-          </argument>
+          <argument type="service" id="doctrine.dbal.logging_middleware.default"/>
+          <argument type="service" id="doctrine.dbal.debug_middleware.default"/>
         </argument>
       </call>
     </service>
@@ -3867,6 +3868,7 @@
         <argument key="url">%env(resolve:DATABASE_URL)%</argument>
         <argument key="use_savepoints">true</argument>
         <argument key="driver">pdo_mysql</argument>
+        <argument key="idle_connection_ttl">600</argument>
         <argument key="host">localhost</argument>
         <argument key="port">null</argument>
         <argument key="user">root</argument>
@@ -3894,6 +3896,7 @@
         </service>
       </argument>
     </service>
+    <service id="doctrine.dbal.connection_expiries" class="ArrayObject"/>
     <service id="doctrine.dbal.logging_middleware" class="Doctrine\DBAL\Logging\Middleware" abstract="true">
       <tag name="monolog.logger" channel="doctrine"/>
       <tag name="doctrine.middleware" connection="default" priority="10"/>
@@ -3953,7 +3956,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.bkfLH5l"/>
+      <argument type="service" id=".service_locator.KvnNBPQ"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3987,6 +3990,7 @@
     </service>
     <service id="doctrine.orm.quote_strategy.default" class="Doctrine\ORM\Mapping\DefaultQuoteStrategy"/>
     <service id="doctrine.orm.quote_strategy.ansi" class="Doctrine\ORM\Mapping\AnsiQuoteStrategy"/>
+    <service id="doctrine.orm.typed_field_mapper.default" class="Doctrine\ORM\Mapping\DefaultTypedFieldMapper"/>
     <service id="doctrine.ulid_generator" class="Symfony\Bridge\Doctrine\IdGenerator\UlidGenerator">
       <tag name="doctrine.id_generator"/>
       <argument>null</argument>
@@ -4137,11 +4141,17 @@
       <call method="setQuoteStrategy">
         <argument type="service" id="doctrine.orm.quote_strategy.default"/>
       </call>
+      <call method="setTypedFieldMapper">
+        <argument type="service" id="doctrine.orm.typed_field_mapper.default"/>
+      </call>
       <call method="setEntityListenerResolver">
         <argument type="service" id="doctrine.orm.default_entity_listener_resolver"/>
       </call>
       <call method="setLazyGhostObjectEnabled">
         <argument>true</argument>
+      </call>
+      <call method="setIdentityGenerationPreferences">
+        <argument type="collection"/>
       </call>
       <call method="setRepositoryFactory">
         <argument type="service" id="doctrine.orm.container_repository_factory"/>
@@ -5741,6 +5751,12 @@
     <service id=".abstract.instanceof.App\Repository\CommentaireHabitatRepository" class="App\Repository\CommentaireHabitatRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HabitatRepository" class="App\Repository\HabitatRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\HabitatRepository" class="App\Repository\HabitatRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\NourritureRepository" class="App\Repository\NourritureRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\NourritureRepository" class="App\Repository\NourritureRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RapportRepository" class="App\Repository\RapportRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\RapportRepository" class="App\Repository\RapportRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ServiceRepository" class="App\Repository\ServiceRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ServiceRepository" class="App\Repository\ServiceRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\StatistiqueRepository" class="App\Repository\StatistiqueRepository" autowire="true" abstract="true"/>
@@ -6381,11 +6397,14 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.bkfLH5l" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.KvnNBPQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CommentaireHabitatRepository" type="service_closure" id="App\Repository\CommentaireHabitatRepository"/>
         <argument key="App\Repository\ContactRepository" type="service_closure" id="App\Repository\ContactRepository"/>
+        <argument key="App\Repository\HabitatRepository" type="service_closure" id="App\Repository\HabitatRepository"/>
+        <argument key="App\Repository\NourritureRepository" type="service_closure" id="App\Repository\NourritureRepository"/>
+        <argument key="App\Repository\RapportRepository" type="service_closure" id="App\Repository\RapportRepository"/>
         <argument key="App\Repository\ServiceRepository" type="service_closure" id="App\Repository\ServiceRepository"/>
         <argument key="App\Repository\StatistiqueRepository" type="service_closure" id="App\Repository\StatistiqueRepository"/>
         <argument key="App\Repository\UtilisateurRepository" type="service_closure" id="App\Repository\UtilisateurRepository"/>
@@ -6403,6 +6422,7 @@
       <argument type="service" id=".service_locator.KLVvNIq"/>
     </service>
     <service id="doctrine.dbal.logging_middleware.default" class="Doctrine\DBAL\Logging\Middleware">
+      <tag name="monolog.logger" channel="doctrine"/>
       <argument type="service" id="monolog.logger.doctrine"/>
     </service>
     <service id="doctrine.dbal.debug_middleware.default" class="Doctrine\Bundle\DoctrineBundle\Middleware\DebugMiddleware">
