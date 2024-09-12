@@ -18,7 +18,7 @@ class Habitat
     private ?string $name_habitat = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $image_habitat = null;
+    private ?string $commentaire_habitat = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description_habitat = null;
@@ -40,14 +40,14 @@ class Habitat
         return $this;
     }
 
-    public function getImageHabitat(): ?string
+    public function getCommentaireHabitat(): ?string
     {
-        return $this->image_habitat;
+        return $this->commentaire_habitat;
     }
 
-    public function setImageHabitat(string $image_habitat): static
+    public function setCommentaireHabitat(string $commentaire_habitat): static
     {
-        $this->image_habitat = $image_habitat;
+        $this->commentaire_habitat = $commentaire_habitat;
 
         return $this;
     }

@@ -13,6 +13,14 @@ framework:
                     max_retries: 3
                     multiplier: 2
             failed: 'doctrine://default?queue_name=failed'
+            amqp:
+                dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+                options:
+                    host: '%env(MESSENGER_TRANSPORT_HOST)%'
+                    port: '%env(MESSENGER_TRANSPORT_PORT)%'
+                retry_strategy:
+                    max_retries: 3
+                    multiplier: 2
             # sync: 'sync://'
 
         default_bus: messenger.bus.default
@@ -27,3 +35,5 @@ framework:
 
             # Route your messages to the transports
             # 'App\Message\YourMessage': async
+            
+            'App\Message\YourMessage': amqp
