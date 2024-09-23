@@ -22,11 +22,16 @@
 
 .navis ul {
     color: black;
+    font-family: 'Lato';
+    font-size: large;
+    font-style: italic;
 }
 
 
-
-
+.navis img {
+    width: 60px;
+    height: 60px;
+}
 
 .navis a:hover {
     background-color:#132D21;
@@ -81,8 +86,6 @@
 }
 
 
-
-
 form {
     background: #415846;
     padding: 5%;
@@ -93,18 +96,16 @@ form {
 }
 
 
-
-
 .check button {
     background-color: black;
     color: #F9DA36;
 }
 
+
 .check button:hover {
     background-color: #F9DA36;
 
 }
-
 
 
 

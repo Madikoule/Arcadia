@@ -2,12 +2,11 @@
     padding: 0;
     text-decoration: none;
     margin: 0;
-
 }
 
 
-/****** debut header *****/
 
+/****** debut header *****/
 
 
 .navis {
@@ -19,6 +18,7 @@
 .navis .barre {
     color:white;
     font-weight: 600;
+
     
 }
 
@@ -34,6 +34,11 @@
 }
 
 
+.navis img {
+    width: 60px;
+    height: 60px;
+}
+
 
 .navis button {
     background-color:#415846;
@@ -43,6 +48,10 @@
 
 .navis ul {
     color: black;
+    font-family: 'Lato';
+    font-style: italic;
+    font-size: large;
+
 }
 
 
@@ -94,8 +103,9 @@
 
 
 .titre2 h2 {
-    font-weight: 400;
+    font-weight: 600;
     font-style: oblique;
+    font-family: 'Roboto';
 
 }
 
@@ -113,6 +123,7 @@
     font-size:x-large;
     text-shadow: 1px 3px rgb(1, 1, 1);
     letter-spacing:2px ;
+    font-family: 'Lato';
 
 }
 
@@ -125,6 +136,7 @@
     color:#F9DA36 ;
     letter-spacing: 2px;
     text-shadow: 2px 4px rgb(6, 6, 6);
+    font-family: 'Roboto';
 
 }
 
@@ -208,6 +220,7 @@
     font-weight: bold;
     text-align: center;
     padding: 2%;
+    font-family: 'Roboto';
 }
 
 
@@ -217,6 +230,8 @@
 
 .panda h4 , p {
     padding: 3%;
+    font-family: 'Lato';
+    font-style: italic;
 }
 
 

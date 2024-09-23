@@ -378,6 +378,13 @@
         <argument type="service" id=".service_locator.jIxfAsi.App\Controller\ServiceController"/>
       </call>
     </service>
+    <service id="App\Controller\VétérinaireController" class="App\Controller\VétérinaireController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.jIxfAsi.App\Controller\VétérinaireController"/>
+      </call>
+    </service>
     <service id="App\Message\YourMessage" class="App\Message\YourMessage" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\AnimalRepository" class="App\Repository\AnimalRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -432,11 +439,7 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Views\accueil" class="App\Views\accueil" autowire="true" autoconfigure="true"/>
-    <service id="App\Views\connexion" class="App\Views\connexion" autowire="true" autoconfigure="true"/>
     <service id="App\Views\contact" class="App\Views\contact" autowire="true" autoconfigure="true"/>
-    <service id="App\Views\dashboard" class="App\Views\dashboard" autowire="true" autoconfigure="true"/>
-    <service id="App\Views\habitat" class="App\Views\habitat" autowire="true" autoconfigure="true"/>
-    <service id="App\Views\service" class="App\Views\service" autowire="true" autoconfigure="true"/>
     <service id="App\functions\compteur" class="App\functions\compteur" autowire="true" autoconfigure="true"/>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
@@ -5868,6 +5871,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ServiceController" class="App\Controller\ServiceController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ServiceController" class="App\Controller\ServiceController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ServiceController" class="App\Controller\ServiceController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\VétérinaireController" class="App\Controller\VétérinaireController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\VétérinaireController" class="App\Controller\VétérinaireController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\VétérinaireController" class="App\Controller\VétérinaireController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AnimalRepository" class="App\Repository\AnimalRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AnimalRepository" class="App\Repository\AnimalRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AvisRepository" class="App\Repository\AvisRepository" autowire="true" abstract="true"/>
@@ -6848,6 +6854,12 @@
     <service id=".service_locator.jIxfAsi.App\Controller\ServiceController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ServiceController"/>
       <argument>App\Controller\ServiceController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.jIxfAsi" method="withContext"/>
+    </service>
+    <service id=".service_locator.jIxfAsi.App\Controller\VétérinaireController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\VétérinaireController"/>
+      <argument>App\Controller\VétérinaireController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jIxfAsi" method="withContext"/>
     </service>

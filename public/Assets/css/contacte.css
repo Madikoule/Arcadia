@@ -25,6 +25,9 @@ color:white;
 
 .navis ul{
     color:black;
+    font-family: 'Lato';
+    font-style: italic;
+    font-size: large;
 }
 
 
@@ -34,6 +37,11 @@ color:white;
     color: #F9DA36;
 }
 
+.navis img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
 
 
 
@@ -76,6 +84,9 @@ main {
     margin-bottom: 60px;
     margin-top: 2%;
     color:#F9DA36;
+    font-family: 'Roboto';
+    text-shadow: 1px 3px rgb(10, 10, 10);
+
 }
 
 
@@ -83,6 +94,7 @@ h2 {
     text-transform: uppercase;
     font-weight: bold;
     color: #ffff;
+
 
 }
 

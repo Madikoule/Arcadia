@@ -22,16 +22,26 @@
 
 .navis a {
     color:black;
+
 }
+
 
 
 .navis .barre {
     color: white;
 }
 
+.navis img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
 
 .navis ul {
     color: black;
+    font-family: 'Lato';
+    font-style: italic;
+    font-size: large;
 }
 
 
@@ -52,7 +62,7 @@
 
 
 #habitat p {
-    padding: 10%;
+    padding: 5%;
     text-align: center;
     color: white;
     letter-spacing: 2%;
@@ -62,7 +72,15 @@
 }
 
 
+#habitat h1 {
+    font-family: 'Roboto';
+    font-weight: 600;
+    text-align: center;
+    padding: 8%;
+    color: #F9DA36;
+    text-shadow: 1px 3px rgb(10, 10, 10);
 
+}
 
 .terre {
     display: flex;
@@ -133,8 +151,13 @@ footer {
 
 
 
+    #habitat h1 {
+        padding: 25%;
+    }
+
+
     #habitat p {
-        padding: 20%;
+        padding: 5%;
         text-align: center;
         color: white;
         letter-spacing: 2%;
@@ -174,8 +197,14 @@ footer {
 
 @media screen and (min-width:578px) {
 
+
+
+    #habitat h1 {
+        padding: 15%;
+    }
+
+
     #habitat p {
-        padding: 10%;
         text-align: center;
         color: white;
         font-weight:500;
@@ -193,8 +222,14 @@ footer {
 
 @media screen and (min-width:768px) {
 
-    #habitat p {
+
+    #habitat h1 {
         padding: 15%;
+    }
+
+
+    #habitat p {
+        padding: 5%;
         text-align: center;
         color: white;
         font-weight:600;
@@ -217,9 +252,7 @@ footer {
     }
 
 
-
 }
-
 
 
 
@@ -229,6 +262,9 @@ footer {
         color: white;
     }
 
+    #habitat h1 {
+        padding: 10%;
+    }
 
 
 }
@@ -238,11 +274,16 @@ footer {
 @media screen and (min-width:1400px) {
 
 
-    #habitat p {
+    #habitat h1 {
         padding: 10%;
+    }
+
+
+    #habitat p {
+        padding: 5%;
         text-align: center;
         color: white;
-        font-weight:600;
+        font-weight:500;
         font-size: xx-large;
     }
 
