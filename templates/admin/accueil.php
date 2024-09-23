@@ -50,6 +50,11 @@ $animals = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Doucoure Mady">
+    <meta name="copyright" content="Arcadia">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Arcadia">
+    <meta property="og:description" content="Découvrez notre zoo, un espace dédié à la faune sauvage et à la conservation. Explorez une variété d'espèces animales dans un cadre naturel et éducatif pour toute la famille.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../../Public/Assets/css/responsive.css">
     <link rel="stylesheet" href="../../Public/Assets/css/style.css">
