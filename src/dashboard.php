@@ -15,7 +15,6 @@
 
 <main>
 
-
     <article>
 
     <div  class="card">
@@ -46,10 +45,10 @@
         <?php
             require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'compteur.php';
 
-            ajouter_vue();
+            $vues= ajouter_vue() ;
         ?>
 
-            <p>Il y a <?= $vues ?> visites<?php if ($vues > 1): ?>s<?php endif; ?> sur le site </p>
+            <p>Il y a <?=$vues?> visite<?php if ($vues > 1): ?>s<?php endif; ?> sur le site </p>
             </div>
         </div>
 
