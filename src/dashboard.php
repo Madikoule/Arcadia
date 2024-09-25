@@ -1,5 +1,5 @@
 
-    
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,13 +14,30 @@
 
 
 <main>
-
     <article>
+
+
+    <div class="row">
+        <div class="col-md-4">
+            </div>
+
+        </div>
+    </div>
+
+<?php
+
+    include 'functions/compteur.php';
+    require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'compteur.php';
+
+?>
 
     <div  class="card">
         <div class="card-body">
-            <strong style= "font-size:3em;"><?= $total ?></strong>
-            Visite<?= $total > 1 ? 's' : '' ?> total
+            <strong style= "font-size:3em;"><?= $total?></strong>
+            Visite<?= $total  > 1 ? 's' : '' ?> total
+            <?php
+
+?>
 
         </div>
     </div>
@@ -43,9 +60,12 @@
         <div class="col-md-4">
 
         <?php
+
             require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'compteur.php';
 
-            $vues= ajouter_vue() ;
+            $vues= ajouter_vue();
+
+
         ?>
 
             <p>Il y a <?=$vues?> visite<?php if ($vues > 1): ?>s<?php endif; ?> sur le site </p>
@@ -59,6 +79,17 @@
                     </div>
                     <button type="submit" class="btn btn-primary">S'inscrire</button>
                 </form>
+
+                <h6>Suivez-Nous</h6>
+        <div class="logo">
+                <a href="https://github.com/Madikoule"><img src="../../Public/Assets/image/github (6).svg" alt="github"></a>
+                <a href="https://www.facebook.com/"><img src="../../Public/Assets/image/facebook (2).svg" alt="facebook"></a>
+                <a href="http://linkedin.com"><img src="../../Public/Assets/image/linkedin.svg" alt="linkedin"></a>
+            </div>
+
+                <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Arcadia, </span>
+            </div>
+        </div>
         </div>
     </footer>
 
