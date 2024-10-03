@@ -3,6 +3,29 @@
 // Démarrer une session pour la gestion des messages d'erreur ou de succès
 session_start();
 
+$erreur = null ;
+// Vérifier que les champs email et password ne sont pas vides
+
+if (!empty ($_POST['email']) && !empty($_POST['password'])) {
+        // Corriger l'erreur dans la vérification du mot de passe
+    if ($_POST['email'] === 'madydouc@yahoo.com' && $_POST['password'] === 'arcadia123') {
+                // Démarrer une session pour indiquer que l'utilisateur est connecté
+        $_SESSION['connecte'] = 1;
+                // Redirection vers la page dashboard
+        header('Location: ./dashboard.php');
+        // on n'est connecter
+        
+        // Arrêter l'exécution du script après la redirection
+        exit();
+    } else {
+        // Message d'erreur si les informations de connexion sont incorrectes
+        $erreur = "Identification incorrecte";
+
+    }
+    
+}
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer et nettoyer les données du formulaire
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
@@ -21,9 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Exemple: $db->prepare("INSERT INTO users (email, password) VALUES (:email, :password)");
 
-        $success = "Inscription réussie !";
     }
 }
+
+
+
 
 ?>
 
@@ -39,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta property="og:type" content="website">
     <meta property="og:title" content="Arcadia">
     <meta property="og:description" content="Découvrez notre zoo, un espace dédié à la faune sauvage et à la conservation. Explorez une variété d'espèces animales dans un cadre naturel et éducatif pour toute la famille.">
-    <link rel="stylesheet" href="../../Public/Assets/css/connexions.css">
+    <link rel="stylesheet" href="../Public/Assets/css/connexions.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -47,10 +72,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
             <div class=" navis container-fluid">
-                <a href="accueil.php"><img src="../../public/Assets/image/logo.arcadia.webp" class="barre brand" alt="logo arcadia"></a>
+                <a href="accueil.php"><img src="../public/Assets/image/logo.arcadia.webp" class="barre brand" alt="logo arcadia"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -84,6 +110,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <main>
+<?php
+
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'auth.php';
+
+
+?>
+
         <div class="container">
             <div class="divider"></div>
             <div class="heading">
@@ -117,6 +150,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php if (isset($success)): ?>
                 <div class="alert alert-success mt-3 col-lg-8"><?= htmlspecialchars($success); ?></div>
             <?php endif; ?>
+            <?php if ($erreur): ?>
+                <div class="alert alert-danger mt-3 col-lg-8"><?= $erreur ?></div>
+            <?php endif ?>
+
                         </div>
                             </form>
                             </div>

@@ -16,6 +16,8 @@
 <body>
 
 <header>
+
+
         <div class="container-fluid">
             <ul class="nav justify-content-center">
                 <li class="nav-item">
@@ -28,7 +30,7 @@
                     <a class="nav-link" href="../templates/admin/contact.php">Gestion</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="../templates/admin/connexion.php">Déconnection</a>
+                    <a class="nav-link " href="../templates/admin/contact.php">contact</a>
                 </li>
             </ul>
         </div>
@@ -39,12 +41,17 @@
 
 <?php
 
-    include 'functions/compteur.php';
+    require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'auth.php';
+
+    include_once 'functions/auth.php';
+    forcer_utilisateur_connecte ();
+
+    include_once 'functions/compteur.php';
+
     require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'compteur.php';
     $total= nombre_vues();
     $annee =(int)date('Y');
     $annee_selection = empty($_GET['annee']) ? $annee : (int)$_GET['annee'];
-
     $mois = [
         '01' => 'Janvier',
         '02' => 'Février',
@@ -65,6 +72,51 @@
         <div class="dash">
             <h1> Dashboard </h1>
         </div>
+
+    <div class="flex-shrink-0 p-3" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+        <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-5 fw-semibold">Menus</span>
+        </a>
+        <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+            Home
+            </button>
+            <div class="collapse show" id="home-collapse" style="">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li>
+            </ul>
+            </div>
+        </li>
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            Dashboard
+            </button>
+            <div class="collapse" id="dashboard-collapse" style="">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a></li>
+            </ul>
+            </div>
+        </li>
+        <li class="border-top my-3"></li>
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+            Account
+            </button>
+            <div class="collapse" id="account-collapse" style="">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
+                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
+            </ul>
+            </div>
+        </li>
+        </ul>
+    </div>
+
     <section class="container-fluid "  >
         <nav class="vue">
 
@@ -128,6 +180,13 @@
                 </form>
             </div>
         </div>
+            <div class="fermeture">
+                <ul>
+                    <li class="nav-item">
+                        <a href="./connexion.php"><button type="button" class="btn btn-warning ">Se deconnecter</button></a>
+                    </li>
+                </ul>
+            </div>
 
                 <h6>Suivez-Nous</h6>
         <div class="logo">
