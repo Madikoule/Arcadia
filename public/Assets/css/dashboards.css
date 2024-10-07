@@ -35,8 +35,9 @@ main {
     text-shadow: 1px 3px rgb(10, 10, 10);
     font-weight: 600;
 
-
 }
+
+
 .vue {
     display: flex;
     align-items: center;
@@ -44,6 +45,68 @@ main {
 
 }
 
+
 .foot {
     padding: 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse
+}
+
+
+
+.englob {
+    display: contents;
+}
+
+
+
+.fermer {
+    padding: 5%;
+    text-align: center;
+    cursor: pointer;
+    color: #050505;
+}
+
+
+.card-body {
+    background-color:#cdcccc;
+    color: #fff;
+
+}
+
+
+
+.logo h6 {
+    text-align: center;
+    font-size: medium;
+    color: #050505;
+    font-weight: 500;
+}
+
+.logo {
+    background-color: #5b5858;
+    text-align: center;
+    color: #050505;
+    
+}
+
+.logo img {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.activity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5%;
+    background-color: #b7b5b5;
+    padding: 2%;
+    text-align: center;
+    font-size: large;
+    font-weight: 600;
+    border-radius: 5px;
 }

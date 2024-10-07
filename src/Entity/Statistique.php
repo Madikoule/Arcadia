@@ -32,4 +32,5 @@ class Statistique
 
         return $this;
     }
+    
 }

@@ -75,8 +75,8 @@
 
     <div class="flex-shrink-0 p-3" style="width: 280px;">
         <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
-        <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-        <span class="fs-5 fw-semibold">Menus</span>
+            <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-5 fw-semibold">Menus</span>
         </a>
         <ul class="list-unstyled ps-0">
         <li class="mb-1">
@@ -84,11 +84,11 @@
             Home
             </button>
             <div class="collapse show" id="home-collapse" style="">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li>
-            </ul>
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Create</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Supression</a></li>
+                </ul>
             </div>
         </li>
         <li class="mb-1">
@@ -96,10 +96,10 @@
             Dashboard
             </button>
             <div class="collapse" id="dashboard-collapse" style="">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a></li>
-            </ul>
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Véterinaire</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Visiteur</a></li>
+                </ul>
             </div>
         </li>
         <li class="border-top my-3"></li>
@@ -108,10 +108,10 @@
             Account
             </button>
             <div class="collapse" id="account-collapse" style="">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
-                <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
-            </ul>
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
+                </ul>
             </div>
         </li>
         </ul>
@@ -145,12 +145,13 @@
         </section>
 
 
+
 </main>
 
 <footer>
 
-        <div class="container foot">
-            <div class="row">
+        <div class="container col-md-6 foot">
+            <div class="englob">
                 <div class=" col-md-4">
                     <div class="card">
                         <div class="card-body">
@@ -168,28 +169,37 @@
                         <p>Il y a <?=$vues?> visite<?php if ($vues > 1): ?>s<?php endif; ?> sur le site </p>
                     </div>
                 </div>
-            </div>
-        </div>
-
-            <div class="col-md-4">
-                <form action="new" method="post" class="form-inline">
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Enter votre email" required class="form-control">
+        
+                    <div class="col-md-4">
+                        <form action="new" method="post" class="form-inline">
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Enter votre email" required class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">S'inscrire</button>
+                        </form>
                     </div>
-                    <button type="submit" class="btn btn-primary">S'inscrire</button>
-                </form>
+                </div>
             </div>
-        </div>
-            <div class="fermeture">
-                <ul>
-                    <li class="nav-item">
-                        <a href="./connexion.php"><button type="button" class="btn btn-warning ">Se deconnecter</button></a>
-                    </li>
-                </ul>
+        
+        <article>
+            <form class="activity">
+                <div class="mb-6 col-md-6">
+                    <label for="exampleFormControlInput1" class="form-label">Votre Nom</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="votre nom">
+                </div>
+                <div class="mb-6 col-md-6">
+                    <label for="exampleFormControlTextarea1" class="form-label"> Rédiger message au Vétérinaire</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </form>
+        </article>
+        
+            <div class="fermer">
+                <a href="./connexion.php"><button type="button" class="btn btn-warning ">Se deconnecter</button></a>
             </div>
-
+        
+            <div class="logo">
                 <h6>Suivez-Nous</h6>
-        <div class="logo">
                 <a href="https://github.com/Madikoule"><img src="../../Public/Assets/image/github (6).svg" alt="github"></a>
                 <a href="https://www.facebook.com/"><img src="../../Public/Assets/image/facebook (2).svg" alt="facebook"></a>
                 <a href="http://linkedin.com"><img src="../../Public/Assets/image/linkedin.svg" alt="linkedin"></a>

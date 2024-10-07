@@ -29,6 +29,11 @@ class Nourriture
     #[ORM\Column(length: 255)]
     private ?string $etat_animal = null;
 
+    #[ORM\ManyToOne(targetEntity: Habitat::class, inversedBy: "nourriture")]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Habitat $habitat = null;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -93,4 +98,18 @@ class Nourriture
 
         return $this;
     }
+
+
+    public function getHabitat(): ?Habitat
+    {
+        return $this->habitat;
+    }
+
+    public function setHabitat(?Habitat $habitat): static
+    {
+        $this->habitat = $habitat;
+
+        return $this;
+    }
+
 }

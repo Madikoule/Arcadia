@@ -20,7 +20,25 @@
 // Compteur de Vues
 Ce projet est un compteur de vues en PHP permettant de suivre et d'afficher le nombre total de visites sur une page. Chaque visite est comptabilisée et le total est stocké dans un fichier texte (compteur.txt) pour une persistance des données.
 
-#Fonctionnalités
+#Fonctionnalités:
 - Incrémentation automatique à chaque visite.
 - Stockage des vues dans un fichier texte pour conserver les données après chaque visite.
 - Affichage dynamique du nombre total de vues.
+
+
+
+// SYSTÈME DE CONNEXION :
+
+#Fonctionnement:
+
+Saisie des identifiants :
+L'utilisateur entre son adresse e-mail et son mot de passe sur la page de connexion.
+
+Vérification :
+
+Le système vérifie si l'e-mail est enregistré.
+Si l'e-mail est correct, le mot de passe est vérifié.
+Accès au tableau de bord :
+
+Si les identifiants sont corrects : L'utilisateur accède à son tableau de bord.
+Si les identifiants sont incorrects : Un message d'erreur s'affiche, et l'accès est refusé.

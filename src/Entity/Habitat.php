@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\HabitatRepository;
 use Doctrine\DBAL\Types\Types;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: HabitatRepository::class)]
@@ -12,6 +14,7 @@ class Habitat
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
@@ -22,6 +25,18 @@ class Habitat
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description_habitat = null;
+
+    #[ORM\OneToMany(targetEntity: Nourriture::class, mappedBy: "habitat", cascade: ["persist", "remove"])]
+
+    private Collection $nourriture ;
+
+
+    public function __construct()
+    {
+        // Initialisation de la collection de Nourriture
+        $this->nourriture = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -63,4 +78,38 @@ class Habitat
 
         return $this;
     }
+
+
+    
+    public function getNourriture(): Collection
+    {
+        return $this->nourriture;
+    }
+
+    public function addNourriture(Nourriture $nourriture): static
+    {
+        if (!$this->nourriture->contains($nourriture)) {
+            $this->nourriture[] = $nourriture;
+            $nourriture->setHabitat($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNourriture(Nourriture $nourriture): static
+    {
+        if ($this->nourriture->removeElement($nourriture)) {
+            if ($nourriture->getHabitat() === $this) {
+                $nourriture->setHabitat(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 }
+
+
+
+
