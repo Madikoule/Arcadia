@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Exemple: $db->prepare("INSERT INTO users (email, password) VALUES (:email, :password)");
 
     }
+
 }
 
 
@@ -100,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="connexion.php">Connexion</a>
+                                <a class="nav-link" href="src/connexion.php">Connexion</a>
                             </li>
                         </ul>
                     </div>
@@ -110,6 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <main>
+
 <?php
 
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'auth.php';
@@ -154,6 +156,7 @@ require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SE
                 <div class="alert alert-danger mt-3 col-lg-8"><?= $erreur ?></div>
             <?php endif ?>
 
+            
                         </div>
                             </form>
                             </div>

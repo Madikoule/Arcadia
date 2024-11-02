@@ -1,4 +1,9 @@
 
+<?php
+
+session_start();
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,6 +15,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+
     <title>Projet ZOO</title>
 </head>
 
@@ -30,7 +39,7 @@
                     <a class="nav-link" href="../templates/admin/contact.php">Gestion</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="../templates/admin/contact.php">contact</a>
+                    <a class="nav-link " href="../src/dashboard.php">contact</a>
                 </li>
             </ul>
         </div>
@@ -67,6 +76,18 @@
         '12' => 'Décembre',
     ];
 
+
+    // Vérifier si un message de succès existe dans la session
+    if (isset($_SESSION['success_message'])) {
+        echo '<h2>Message Reçu :</h2>';
+        echo '<pre>' . $_SESSION['success_message'] . '</pre>';
+        
+        // Effacer le message de la session après l'affichage
+        unset($_SESSION['success_message']);
+    } else {
+        echo '<p>Aucun message n\'a été envoyé.</p>';
+    }
+
 ?>
 
         <div class="dash">
@@ -83,7 +104,7 @@
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
             Home
             </button>
-            <div class="collapse show" id="home-collapse" style="">
+            <div class="collapse show" id="home-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Create</a></li>
                     <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
@@ -95,7 +116,7 @@
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
             Dashboard
             </button>
-            <div class="collapse" id="dashboard-collapse" style="">
+            <div class="collapse" id="dashboard-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Véterinaire</a></li>
                     <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Visiteur</a></li>
@@ -107,7 +128,7 @@
             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
             Account
             </button>
-            <div class="collapse" id="account-collapse" style="">
+            <div class="collapse" id="account-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
                     <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
@@ -184,12 +205,15 @@
         <article>
             <form class="activity">
                 <div class="mb-6 col-md-6">
-                    <label for="exampleFormControlInput1" class="form-label">Votre Nom</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="votre nom">
+                    <label for="exampleFormControlInput1" class="form-label" >Votre Nom</label>
+                    <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="votre nom">
                 </div>
                 <div class="mb-6 col-md-6">
                     <label for="exampleFormControlTextarea1" class="form-label"> Rédiger message au Vétérinaire</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-dark" type="submit">Envoyé </button>
                 </div>
             </form>
         </article>
@@ -205,12 +229,13 @@
                 <a href="http://linkedin.com"><img src="../../Public/Assets/image/linkedin.svg" alt="linkedin"></a>
             </div>
 
-                <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Arcadia, </span>
+                <span class="mb-3 mb-md-0 text-body-secondary">©2024 Arcadia, </span>
             </div>
         </div>
         
     </footer>
 </body>
+    <script src="../Public/Assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 

@@ -42,3 +42,14 @@ Accès au tableau de bord :
 
 Si les identifiants sont corrects : L'utilisateur accède à son tableau de bord.
 Si les identifiants sont incorrects : Un message d'erreur s'affiche, et l'accès est refusé.
+
+
+
+
+// CRÉER UN FORMULAIRE DE CONTACT 
+
+Créer une page contact accesible via /contact qui demande à l'utilisateur son nom, son email, un message 
+
+on utilisera un objet "ContactFormDTO" pour représenter les données de ce formulaire (pas une entité car on ne sauvegarde pas en base de données).
+
+on utilisera mailpit ou maildev pour tester la réception d'email 

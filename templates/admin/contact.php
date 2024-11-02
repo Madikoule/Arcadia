@@ -1,4 +1,9 @@
 
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -40,10 +45,10 @@
                                 <a class="nav-link" href="habitat.php">Habitats</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="habitat.php">Contact</a>
+                                <a class="nav-link" href="contact.php">Contact</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/src/connexion.php">Connexion</a>
+                                <a class="nav-link" href="../src/connexion.php">Connexion</a>
                             </li>
                                 </ul>
                             </li>
@@ -64,7 +69,7 @@
     
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
-                <form id="contact-form" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" role="form">
+                <form id="contact-form" method="post" action="send_message.php"role="form">
                     <div class="row">
                     <div class="col-md-8">
                             <label for="name">Nom<span class="bleu">*</span></label>
@@ -97,15 +102,30 @@
                         <div class="col-md-8">
                             <input type="submit" class="button1" value="Envoyer">
                         </div>
-
-                                <!---- le message apparaitra une fois que le formulaire a été validé avec ( succes)--->
-                            <p class="thank-you" style="display:<?php if($isSuccess) echo 'block'; else echo 'none' ;?> " >Votre message a bien ete envoye. Merci de m'avoir contacte :) </p>
                     </form>
+                    <div id="confirmation-message" style="display:none; color: green;">Votre message a bien été envoyé avec succès !
                 </div>
             </div>
         </div>
     </div>
-        
+
+        <?php
+
+            if (isset($_SESSION['success'])): ?>
+                <div class="alert alert-success">
+                    <?= $_SESSION['success']; ?>
+                </div>
+                <?php unset($_SESSION['success']); ?>
+            <?php endif; ?>
+
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="alert alert-danger">
+                    <?= $_SESSION['error']; ?>
+                </div>
+                <?php unset($_SESSION['error']); ?>
+            <?php endif; 
+        ?>
+
             <div class="retour">
                 <a href="accueil.php"><button type="button" class="btn btn-warning ">Retour</button></a>
             </div>
@@ -123,9 +143,7 @@
             </div>
     </footer>
 
-        
-
-    
+    <script src="../../public/Assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 

@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+    
+    
+    header {
+        background-color: #050505;
+    }
+    
+    header li a {
+        color: #F9DA3f;
+    
+    
+    }
+    
+    
+    main {
+        background-color: rgb(84, 93, 101);
+        padding: 2%;
+        
+    }
+    
+    .dash {
+        text-align: center;
+        background-color: #000000 ; 
+    
+    }
+    
+    
+    .dash h1 {
+        text-align: center;
+        color:#F9DA3f;
+        font-family: 'Lato' sans-serif;
+        text-shadow: 1px 3px rgb(10, 10, 10);
+        font-weight: 600;
+    
+    }
+    
+    .container { 
+        background-color: #fff;
+    }

@@ -69,6 +69,7 @@ main {
 }
 
 
+
 .card-body {
     background-color:#cdcccc;
     color: #fff;
@@ -109,4 +110,9 @@ main {
     font-size: large;
     font-weight: 600;
     border-radius: 5px;
+}
+
+
+.activity button {
+    margin-top: 2%;
 }

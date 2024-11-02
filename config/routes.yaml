@@ -3,3 +3,8 @@ controllers:
         path: ../src/Controllers/
         namespace: App\Controller
     type: attribute
+
+# config/routes.yaml
+contact_form:
+    path: /contact
+    controller: App\Controller\ContactController::sendEmail

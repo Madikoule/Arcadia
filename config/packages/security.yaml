@@ -28,6 +28,9 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/contact, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        # Règles d'accès pour d'autres routes
+        - { path: ^/dashboard, roles: ROLE_USER }  # Exemple de protection de la page de tableau de bord
 
 when@test:
     security:
