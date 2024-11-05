@@ -29,7 +29,8 @@ if (!empty ($_POST['email']) && !empty($_POST['password'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer et nettoyer les données du formulaire
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $password = $_POST['password'];
+    $password = $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+    $_POST['password'];
 
     // Vérification que l'email est valide
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -38,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Le mot de passe est requis.";
     } else {
         // Hash du mot de passe avant stockage (exemple d'utilisation de bcrypt)
-        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
         // Exécuter ici la logique de stockage ou d'authentification en base de données
 

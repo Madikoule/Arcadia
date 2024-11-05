@@ -29,12 +29,12 @@ class Utilisateur
     {
         return $this->id;
     }
-
+        // get pour recuperer des donnée
     public function getNameUser(): ?string
     {
         return $this->name_user;
     }
-
+        // set envoi des donnée
     public function setNameUser(string $name_user): static
     {
         $this->name_user = $name_user;

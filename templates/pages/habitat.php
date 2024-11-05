@@ -52,7 +52,7 @@ $habitats = [
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
             <div class=" navis container-fluid">
-            <a href="accueil.php"> <img src="../../public/Assets/image/logo.arcadia.webp" alt="arcadia"></a>
+                <a href="accueil.php"> <img src="../../public/Assets/image/logo.arcadia.webp" alt="arcadia"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

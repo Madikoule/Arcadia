@@ -12,84 +12,84 @@ class Animal
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id_animal = null;
 
     #[ORM\Column(length: 100)]
-    private ?string $name_animal = null;
+    private ?string $name = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $race_animal = null;
+    private ?string $race = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $habitat_animal = null;
+    private ?string $habitat = null;
 
     #[ORM\Column]
-    private ?int $age_animal = null;
+    private ?int $age = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $description_animal = null;
+    private ?string $description = null;
 
     public function getId(): ?int
     {
-        return $this->id;
+        return $this->id_animal;
     }
 
-    public function getNameAnimal(): ?string
+    public function getName(): ?string
     {
-        return $this->name_animal;
+        return $this->name;
     }
 
-    public function setNameAnimal(string $name_animal): static
+    public function setName(string $name): static
     {
-        $this->name_animal = $name_animal;
+        $this->name = $name;
 
         return $this;
     }
 
-    public function getRaceAnimal(): ?string
+    public function getRace(): ?string
     {
-        return $this->race_animal;
+        return $this->race;
     }
 
-    public function setRaceAnimal(string $race_animal): static
+    public function setRace(string $race): static
     {
-        $this->race_animal = $race_animal;
+        $this->race = $race;
 
         return $this;
     }
 
-    public function getHabitatAnimal(): ?string
+    public function getHabitat(): ?string
     {
-        return $this->habitat_animal;
+        return $this->habitat;
     }
 
-    public function setHabitatAnimal(string $habitat_animal): static
+    public function setHabitat(string $habitat): static
     {
-        $this->habitat_animal = $habitat_animal;
+        $this->habitat = $habitat;
 
         return $this;
     }
 
-    public function getAgeAnimal(): ?int
+    public function getAge(): ?int
     {
-        return $this->age_animal;
+        return $this->age;
     }
 
-    public function setAgeAnimal(int $age_animal): static
+    public function setAge(int $age): static
     {
-        $this->age_animal = $age_animal;
+        $this->age = $age;
 
         return $this;
     }
 
-    public function getDescriptionAnimal(): ?string
+    public function getDescription(): ?string
     {
-        return $this->description_animal;
+        return $this->description;
     }
 
-    public function setDescriptionAnimal(string $description_animal): static
+    public function setDescription(string $description): static
     {
-        $this->description_animal = $description_animal;
+        $this->description = $description;
 
         return $this;
     }

@@ -2,7 +2,7 @@
 USE arcadia 
 
 CREATE TABLE utilisateur (
-    id_user INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_user INT PRIMARY KEY AUTO_INCREMENT,
     name_user VARCHAR(50) NOT NULL,
     firstname_user VARCHAR(100) NOT NULL,
     password_user VARCHAR(60) NOT NULL,
@@ -12,13 +12,13 @@ CREATE TABLE utilisateur (
 );
 
 CREATE TABLE services (
-    id_services INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_services INT PRIMARY KEY AUTO_INCREMENT,
     name_service VARCHAR(100) NOT NULL,
     s_description VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE roles (
-    id_roles INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_roles INT PRIMARY KEY AUTO_INCREMENT,
     name_roles VARCHAR(100) NOT NULL
 );
 
@@ -30,7 +30,7 @@ CREATE TABLE habitat (
 );
 
 CREATE TABLE avis (
-    id_avis INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_avis INT PRIMARY KEY AUTO_INCREMENT,
     description_avis TEXT NOT NULL,
     note_avis INT NOT NULL,
     email_avis VARCHAR(100) NOT NULL,
@@ -39,18 +39,19 @@ CREATE TABLE avis (
 );
 
 CREATE TABLE animal (
-    id_animal INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    name_animal VARCHAR(100) NOT NULL,
-    race_animal VARCHAR(255) NOT NULL,
-    habitat_animal VARCHAR(255) NOT NULL,
-    age_animal INT NOT NULL,
-    description_animal TEXT NOT NULL,
-    id_habitat INT NOT NULL,
+    id_animal INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    race VARCHAR(255) NOT NULL,
+    habitat VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    description TEXT NOT NULL,
+    id_habitat INT NOT NULL
     FOREIGN KEY (id_habitat) REFERENCES habitat(id_habitat)
+
 );
 
 CREATE TABLE nourriture ( 
-    id_nourriture INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_nourriture INT PRIMARY KEY AUTO_INCREMENT,
     name_nourriture VARCHAR(100) NOT NULL,
     description_nourriture VARCHAR(255) NOT NULL,
     grammage_nourriture VARCHAR(255) NOT NULL,
@@ -59,7 +60,7 @@ CREATE TABLE nourriture (
 );
 
 CREATE TABLE horaire ( 
-    id_horaire INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_horaire INT PRIMARY KEY AUTO_INCREMENT,
     ouverture_horaire TIME NOT NULL,
     fermeture_horaire TIME NOT NULL,
     id_user INT NOT NULL,
@@ -67,13 +68,13 @@ CREATE TABLE horaire (
 );
 
 CREATE TABLE image ( 
-    id_image INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_image INT PRIMARY KEY AUTO_INCREMENT,
     name_image VARCHAR(100) NOT NULL,
     chemin_image VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE jours (  
-    id_jours INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_jours INT PRIMARY KEY AUTO_INCREMENT,
     name_jours VARCHAR(100) NOT NULL,
     statut_jours VARCHAR(100) NOT NULL,
     id_services INT NOT NULL,
@@ -82,7 +83,7 @@ CREATE TABLE jours (
 
 
 CREATE TABLE rapport (  
-    id_rapport INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_rapport INT PRIMARY KEY AUTO_INCREMENT,
     name_rapport VARCHAR(255) NOT NULL
 );
 

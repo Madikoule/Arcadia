@@ -106,9 +106,9 @@ session_start();
             </button>
             <div class="collapse show" id="home-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Create</a></li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Supression</a></li>
+                    <li><a href="" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Habitat</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Services</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Animaux</a></li>
                 </ul>
             </div>
         </li>
@@ -118,8 +118,8 @@ session_start();
             </button>
             <div class="collapse" id="dashboard-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Véterinaire</a></li>
-                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Visiteur</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Vétérinaire</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Rapport</a></li>
                 </ul>
             </div>
         </li>
@@ -190,15 +190,6 @@ session_start();
                         <p>Il y a <?=$vues?> visite<?php if ($vues > 1): ?>s<?php endif; ?> sur le site </p>
                     </div>
                 </div>
-        
-                    <div class="col-md-4">
-                        <form action="new" method="post" class="form-inline">
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Enter votre email" required class="form-control">
-                            </div>
-                            <button type="submit" class="btn btn-primary">S'inscrire</button>
-                        </form>
-                    </div>
                 </div>
             </div>
         

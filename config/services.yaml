@@ -22,3 +22,14 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+
+    services:
+        App\Service\DatabaseService:
+            arguments:
+                $dsn: '%env(resolve:DATABASE_DSN)%'
+                $username: '%env(resolve:DATABASE_USER)%'
+                $password: '%env(resolve:DATABASE_PASSWORD)%'

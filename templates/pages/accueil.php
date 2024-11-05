@@ -2,6 +2,7 @@
 
 
 
+
 $animals = [
     0 => [
         'name' => 'Gibbon au main blanches',
@@ -32,14 +33,15 @@ $animals = [
         'age' => ' 35 ans' ,
         'race' => ' Crocodylus Niloticus' ,
     ]
-    ];
+    
+];
+
+
+
 
 
 
 ?>
-
-
-
 
 
 

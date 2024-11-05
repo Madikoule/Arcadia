@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controller;
 
 
 use Symfony\Component\HttpFoundation\Response;
@@ -10,9 +10,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AccueilController extends AbstractController 
 
 {
-    #[Route('/', name: 'accueil')]
+    #[Route('/accueil', name: 'app_accueil')]
     function index(): Response {
-        return new Response('Bonjour les gens');
+        ob_start();
+        include __DIR__ . '/../../templates/pages/accueil.php';
+        $content = ob_get_clean();
+
+        return new Response($content);
 
     }
 

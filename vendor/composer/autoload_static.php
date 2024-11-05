@@ -76,6 +76,7 @@ class ComposerStaticInitf2f3ea2b52dc1dc543fcff270d9d2335
             'Symfony\\Component\\Notifier\\' => 27,
             'Symfony\\Component\\Mime\\' => 23,
             'Symfony\\Component\\Messenger\\Bridge\\Doctrine\\' => 44,
+            'Symfony\\Component\\Messenger\\Bridge\\Amqp\\' => 40,
             'Symfony\\Component\\Messenger\\' => 28,
             'Symfony\\Component\\Mailer\\' => 25,
             'Symfony\\Component\\Intl\\' => 23,
@@ -324,6 +325,10 @@ class ComposerStaticInitf2f3ea2b52dc1dc543fcff270d9d2335
         'Symfony\\Component\\Messenger\\Bridge\\Doctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/doctrine-messenger',
+        ),
+        'Symfony\\Component\\Messenger\\Bridge\\Amqp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/amqp-messenger',
         ),
         'Symfony\\Component\\Messenger\\' => 
         array (
@@ -596,7 +601,14 @@ class ComposerStaticInitf2f3ea2b52dc1dc543fcff270d9d2335
     );
 
     public static $classMap = array (
-        'App\\Controllers\\AccueilController' => __DIR__ . '/../..' . '/src/Controllers/AccueilController.php',
+        'App\\Controller\\AdminController' => __DIR__ . '/../..' . '/src/Controller/AdminController.php',
+        'App\\Controller\\AnimalController' => __DIR__ . '/../..' . '/src/Controller/AnimalController.php',
+        'App\\Controller\\DashboardController' => __DIR__ . '/../..' . '/src/Controller/DashboardController.php',
+        'App\\Controller\\EmployéController' => __DIR__ . '/../..' . '/src/Controller/EmployéController.php',
+        'App\\Controller\\HabitatController' => __DIR__ . '/../..' . '/src/Controller/HabitatController.php',
+        'App\\Controller\\RapportController' => __DIR__ . '/../..' . '/src/Controller/RapportController.php',
+        'App\\Controller\\ServiceController' => __DIR__ . '/../..' . '/src/Controller/ServiceController.php',
+        'App\\Controller\\VétérinaireController' => __DIR__ . '/../..' . '/src/Controller/VétérinaireController.php',
         'App\\Entity\\Animal' => __DIR__ . '/../..' . '/src/Entity/Animal.php',
         'App\\Entity\\Avis' => __DIR__ . '/../..' . '/src/Entity/Avis.php',
         'App\\Entity\\CommentaireHabitat' => __DIR__ . '/../..' . '/src/Entity/CommentaireHabitat.php',
@@ -611,7 +623,6 @@ class ComposerStaticInitf2f3ea2b52dc1dc543fcff270d9d2335
         'App\\Entity\\Statistique' => __DIR__ . '/../..' . '/src/Entity/Statistique.php',
         'App\\Entity\\Utilisateur' => __DIR__ . '/../..' . '/src/Entity/Utilisateur.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
-        'App\\Message\\YourMessage' => __DIR__ . '/../..' . '/src/Message/YourMessage.php',
         'App\\Repository\\AnimalRepository' => __DIR__ . '/../..' . '/src/Repository/AnimalRepository.php',
         'App\\Repository\\AvisRepository' => __DIR__ . '/../..' . '/src/Repository/AvisRepository.php',
         'App\\Repository\\CommentaireHabitatRepository' => __DIR__ . '/../..' . '/src/Repository/CommentaireHabitatRepository.php',
@@ -619,6 +630,7 @@ class ComposerStaticInitf2f3ea2b52dc1dc543fcff270d9d2335
         'App\\Repository\\HabitatRepository' => __DIR__ . '/../..' . '/src/Repository/HabitatRepository.php',
         'App\\Repository\\ImageRepository' => __DIR__ . '/../..' . '/src/Repository/ImageRepository.php',
         'App\\Repository\\JoursRepository' => __DIR__ . '/../..' . '/src/Repository/JoursRepository.php',
+        'App\\Repository\\MessageRepository' => __DIR__ . '/../..' . '/src/Repository/MessageRepository.php',
         'App\\Repository\\NourritureRepository' => __DIR__ . '/../..' . '/src/Repository/NourritureRepository.php',
         'App\\Repository\\RapportRepository' => __DIR__ . '/../..' . '/src/Repository/RapportRepository.php',
         'App\\Repository\\RolesRepository' => __DIR__ . '/../..' . '/src/Repository/RolesRepository.php',
@@ -4815,6 +4827,14 @@ class ComposerStaticInitf2f3ea2b52dc1dc543fcff270d9d2335
         'Symfony\\Component\\Mailer\\Transport\\TransportInterface' => __DIR__ . '/..' . '/symfony/mailer/Transport/TransportInterface.php',
         'Symfony\\Component\\Mailer\\Transport\\Transports' => __DIR__ . '/..' . '/symfony/mailer/Transport/Transports.php',
         'Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler' => __DIR__ . '/..' . '/symfony/messenger/Attribute/AsMessageHandler.php',
+        'Symfony\\Component\\Messenger\\Bridge\\Amqp\\Transport\\AmqpFactory' => __DIR__ . '/..' . '/symfony/amqp-messenger/Transport/AmqpFactory.php',
+        'Symfony\\Component\\Messenger\\Bridge\\Amqp\\Transport\\AmqpReceivedStamp' => __DIR__ . '/..' . '/symfony/amqp-messenger/Transport/AmqpReceivedStamp.php',
+        'Symfony\\Component\\Messenger\\Bridge\\Amqp\\Transport\\AmqpReceiver' => __DIR__ . '/..' . '/symfony/amqp-messenger/Transport/AmqpReceiver.php',
+        'Symfony\\Component\\Messenger\\Bridge\\Amqp\\Transport\\AmqpSender' => __DIR__ . '/..' . '/symfony/amqp-messenger/Transport/AmqpSender.php',
+        'Symfony\\Component\\Messenger\\Bridge\\Amqp\\Transport\\AmqpStamp' => __DIR__ . '/..' . '/symfony/amqp-messenger/Transport/AmqpStamp.php',
+        'Symfony\\Component\\Messenger\\Bridge\\Amqp\\Transport\\AmqpTransport' => __DIR__ . '/..' . '/symfony/amqp-messenger/Transport/AmqpTransport.php',
+        'Symfony\\Component\\Messenger\\Bridge\\Amqp\\Transport\\AmqpTransportFactory' => __DIR__ . '/..' . '/symfony/amqp-messenger/Transport/AmqpTransportFactory.php',
+        'Symfony\\Component\\Messenger\\Bridge\\Amqp\\Transport\\Connection' => __DIR__ . '/..' . '/symfony/amqp-messenger/Transport/Connection.php',
         'Symfony\\Component\\Messenger\\Bridge\\Doctrine\\Transport\\Connection' => __DIR__ . '/..' . '/symfony/doctrine-messenger/Transport/Connection.php',
         'Symfony\\Component\\Messenger\\Bridge\\Doctrine\\Transport\\DoctrineReceivedStamp' => __DIR__ . '/..' . '/symfony/doctrine-messenger/Transport/DoctrineReceivedStamp.php',
         'Symfony\\Component\\Messenger\\Bridge\\Doctrine\\Transport\\DoctrineReceiver' => __DIR__ . '/..' . '/symfony/doctrine-messenger/Transport/DoctrineReceiver.php',

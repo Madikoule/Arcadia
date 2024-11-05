@@ -19,6 +19,12 @@ class UtilisateurRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Utilisateur::class);
+
+    }
+
+    public function createUser($id, $name_user, $firstname_user,  $password_user, $email_user): Utilisateur
+    {
+        
     }
 
 //    /**

@@ -48,8 +48,13 @@ Si les identifiants sont incorrects : Un message d'erreur s'affiche, et l'accès
 
 // CRÉER UN FORMULAIRE DE CONTACT 
 
-Créer une page contact accesible via /contact qui demande à l'utilisateur son nom, son email, un message 
+Créer une page contact accesible via /contact qui demande à l'utilisateur son nom, son email, un message .
+Il permet aux utilisateurs d'envoyer des messages, qui sont ensuite affichés sur le tbaleau de bord de l'application.
+Ce système de messagerie est concu pour être siplie et efficace, permettant une communication fluide entre les utilisateurs et l'administrateur du site .
 
-on utilisera un objet "ContactFormDTO" pour représenter les données de ce formulaire (pas une entité car on ne sauvegarde pas en base de données).
+- Remplissez tous les champs obligatoires() et cliquez sur le bouto, "Envoyer".
+- Une fois le message envoyé apparait également sur le tableau de bord .
 
-on utilisera mailpit ou maildev pour tester la réception d'email 
+GESTION DES ERREURS
+- es champs obligatoires sont validés avant l'envoi.
+- En cas d'erreur lors de l'envoi, une alerte s'affiche pour informer l'utilisateur.
