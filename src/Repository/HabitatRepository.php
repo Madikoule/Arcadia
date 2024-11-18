@@ -21,6 +21,13 @@ class HabitatRepository extends ServiceEntityRepository
         parent::__construct($registry, Habitat::class);
     }
 
+    public function findAllHabitats(): array
+    {
+
+        return $this->findBy([], ['name_habitat' => 'ASC']); // Trie les animaux par nom (ou tout autre critère).
+    }
+
+
 //    /**
 //     * @return Habitat[] Returns an array of Habitat objects
 //     */

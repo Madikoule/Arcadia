@@ -1,10 +1,10 @@
 controllers:
-    resource: 
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+    resource: ../src/Controller/
+    type: annotation
 
 # config/routes.yaml
 contact_form:
     path: /contact
     controller: App\Controller\ContactController::sendEmail
+
+

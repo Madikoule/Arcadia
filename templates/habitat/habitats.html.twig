@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <section id="habitat" class="container-fluid">
+        <div class="col-lg-12">
+            <h1>Nos Habitats</h1>
+            <nav class="para">
+                <p> Explorer les divers lieux où vivent les animaux ! Des Savanes Africaines aux forêt tropicales,
+                    des lacs profonds aux montagne enneigées , chaque espèce à un habitat unique qui 
+                    répond à ses besoins spécifiques. Rejoignez-nous pour un voyage fascinant à travers
+                    les habitats du monde entiers et laissez-vous émerveiller par la nature ! 
+                </p>
+            </nav>
+        </div>
+
+        <article class="terre container">
+            {% for habitat in habitats %}
+                <a href="..">
+                    <figure class="figure">
+                        <img src="{{ habitat.imageHabitat }}" class="figure-img img-fluid rounded" alt="{{ habitat.nameHabitat }}">
+                        <figcaption class="figure-caption">{{ habitat.nameHabitat }}</figcaption>
+                    </figure>
+                </a>
+                <p>{{ habitat.descriptionHabitat }}</p>
+            {% endfor %}
+        </article>
+    </section>
+
+
+{% endblock %}

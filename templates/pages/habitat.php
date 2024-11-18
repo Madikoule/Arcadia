@@ -89,27 +89,27 @@ $habitats = [
     </header>
     
     <main>
-    <section id="habitat" class="container-fluid">
-            <div class=" col-lg-12">
-                <h1>Nos Habitats</h1>
-                <nav class="para">
-                    <p> Explorer les divers lieux où vivent les animaux ! Des Savanes Africaines aux forêt tropicales,
-                        des lacs profonds aux montagne enneigées , chaque espèce à un habitat unique qui 
-                        répond à ses besoins spécifiques. Rejoignez-nous pour un voyage fascinant à travers
-                        les habitats du monde entiers et laissez-vous émerveiller par la nature ! </p>
-                </nav>
-            </div>
+        <section id="habitat" class="container-fluid">
+                <div class=" col-lg-12">
+                    <h1>Nos Habitats</h1>
+                    <nav class="para">
+                        <p> Explorer les divers lieux où vivent les animaux ! Des Savanes Africaines aux forêt tropicales,
+                            des lacs profonds aux montagne enneigées , chaque espèce à un habitat unique qui 
+                            répond à ses besoins spécifiques. Rejoignez-nous pour un voyage fascinant à travers
+                            les habitats du monde entiers et laissez-vous émerveiller par la nature ! </p>
+                    </nav>
+                </div>
 
 
-            <article class="terre" class="container">
-                    <?php foreach ($habitats as $habitat) { ?>
-                    <a href=".." ><figure class="figure">
-                        <img src="<?php echo $habitat['image'] ?>" class="figure-img img-fluid rounded" alt="<?php echo $habitat['name'] ?>">
-                        <figcaption class="figure-caption"><?php echo $habitat['name'] ?></figcaption>
-                    </figure></a>
-                    <p><?php echo $habitat['description'] ?></p>
-                <?php } ?>
-                </div>    
+                <article class="terre" class="container">
+                        <?php foreach ($habitats as $habitat) { ?>
+                        <a href=".." ><figure class="figure">
+                            <img src="<?php echo $habitat['image'] ?>" class="figure-img img-fluid rounded" alt="<?php echo $habitat['name'] ?>">
+                            <figcaption class="figure-caption"><?php echo $habitat['name'] ?></figcaption>
+                        </figure></a>
+                        <p><?php echo $habitat['description'] ?></p>
+                    <?php } ?>
+                    </div>    
             </article>
     </section>
     

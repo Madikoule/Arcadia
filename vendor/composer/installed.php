@@ -1,24 +1,15 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'vendor/package',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'd3cd4b5f3dea392afc4ddb210004ba20afe116ed',
+        'reference' => '68874c14cbc21d8d736fe1887c6248d271321b2b',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => 'd3cd4b5f3dea392afc4ddb210004ba20afe116ed',
-            'type' => 'project',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'bunny/bunny' => array(
             'pretty_version' => 'v0.5.5',
             'version' => '0.5.5.0',
@@ -1313,6 +1304,15 @@
             'reference' => '4d19472d4ac1838e0b1f0e029ce1fa4040eb34ea',
             'type' => 'library',
             'install_path' => __DIR__ . '/../twig/twig',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'vendor/package' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '68874c14cbc21d8d736fe1887c6248d271321b2b',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

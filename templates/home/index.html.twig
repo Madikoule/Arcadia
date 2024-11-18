@@ -1,0 +1,159 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+
+{% block body %}
+        <!-- Section carousel -->
+        <section>
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="cover carousel-item active">
+                        <img src="{{ asset('Assets/image/Animaux/panda-family.webp') }}" alt="Panda Family">
+                    </div>
+                    <div class="cover carousel-item">
+                        <img src="{{ asset('Assets/image/Animaux/elephant.webp') }}" alt="Elephant">
+                    </div>
+                    <div class="title">
+                        <span>VOYAGER AU COEUR <br> DE NOS HABITATS</span>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Section découverte -->
+        <section>
+            <div class="decouverte container-fluid">
+                <div class="titre2">
+                    <h2>Bienvenue dans le Zoo <br> Arcadia.</h2>
+                </div>
+                <div class="zoo">
+                    <img src="{{ asset('Assets/image/Habitat/Aquatic-ZOO.jpeg') }}" class="img-fluid" alt="Arcadia">
+                </div>
+                <div class="text1">
+                    <p>Un parc zoologique, aussi appelé jardin zoologique, ou plus communément zoo, est un espace où sont réunies de nombreuses espèces animales, pour la plupart sauvages, vivant dans des espaces clos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section habitats Arcadia -->
+        <section>
+            <div class="slide1 container-fluid">
+                <div class="titre3">
+                    <h3>Les Habitats Arcadia</h3>
+                </div>
+                <div id="carouselExampleCaptions" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{ asset('Assets/image/Habitat/jungle.jpg') }}" class="img-fluid" alt="Jungle">
+                            <div class="sel1"><h5>Jungle</h5></div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ asset('Assets/image/Habitat/maraiis.webp') }}" class="img-fluid" alt="Marais">
+                            <div class="sel2"><h5>Marais</h5></div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ asset('Assets/image/Habitat/savane.jpeg') }}" class="img-fluid" alt="Savane">
+                            <div class="sel3"><h5>Savane</h5></div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+        <!-- Section animaux -->
+        <section class="container-fluid">
+            <div class="titl2">
+                <h3>Nos Animaux Terrestres</h3>
+            </div>
+
+            <div class="animaux">
+                {% for animal in animals %}
+                    <div class="panda">
+                        <img src="{{ asset(animal.image) }}" class="img-fluid" alt="{{ animal.name }}">
+                        <div class="name1">
+                            <h4>{{ animal.name }}</h4>
+                            <p>{{ animal.description }}</p>
+                            <button onclick="openPopup('popup{{ loop.index }}')">Voir plus d'infos</button>
+                        </div>
+
+                        <div id="popup{{ loop.index }}" class="popup">
+                            <div class="popup-content">
+                                <span class="close" onclick="closePopup('popup{{ loop.index }}')">&times;</span>
+                                <h2>{{ animal.title }}</h2>
+                                <p><strong>Habitat :</strong> {{ animal.habitat }}</p>
+                                <p><strong>Âge :</strong> {{ animal.age }}</p>
+                                <p><strong>Race :</strong> {{ animal.race }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+                </div>
+        </section>
+
+
+        <!-- Section avis -->
+        <section>
+            <div class="vert container-fluid">
+                <div class="description">
+                    <a href="{{ path('service_services') }}"><button type="button" class="btn btn-warning">Services</button></a>
+                    <p>- Visite du Zoo en petit train.</p>
+                    <p>- Restaurant avec terrasse vue sur le bassin aquatique.</p>
+                    <p>- Visite des habitats avec un guide.</p>
+                </div>
+
+                <div class="form-container">
+                    <h2 class="text-center">Votre Avis</h2>
+                    <form id="reviewForm">
+                        <div class="form-group">
+                            <label for="name">Nom :</label>
+                            <input type="text" class="form-control" id="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email :</label>
+                            <input type="email" class="form-control" id="email" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Note :</label>
+                            <div class="star-rating">
+                                {% for i in 5..1 %}
+                                    <input type="radio" id="{{ i }}-stars" name="rating" value="{{ i }}">
+                                    <label for="{{ i }}-stars" class="star">&#9733;</label>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="comments">Commentaires :</label>
+                            <textarea class="form-control" id="comments" rows="5" placeholder="Laissez votre avis ici..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+{% endblock %}

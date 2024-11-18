@@ -2,22 +2,26 @@
 
 namespace App\Controller;
 
-
+use App\Repository\AnimalRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class AccueilController extends AbstractController 
 
+
+class AccueilController extends AbstractController
 {
-    #[Route('/accueil', name: 'app_accueil')]
-    function index(): Response {
-        ob_start();
-        include __DIR__ . '/../../templates/pages/accueil.php';
-        $content = ob_get_clean();
+    #[Route("/home", "home_index")]
+    public function index(AnimalRepository $animalRepository): Response
+    {
+        // appelle la methode du repository
+        $animals = $animalRepository->findAllAnimals();
 
-        return new Response($content);
+        // Passe les donées a la vue twig
+        return $this->render('home/index.html.twig', [
+            'animals' => $animals,
+        ]);
+
 
     }
-
 }

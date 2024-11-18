@@ -1,0 +1,6 @@
+7b9fdf,127.0.0.1,GET,http://127.0.0.1:8000/habitat,1731954703,,200
+292ef2,127.0.0.1,GET,http://127.0.0.1:8000/Assets/image/facebook.svg,1731954703,24b46d,404
+7f37bf,127.0.0.1,GET,http://127.0.0.1:8000/Assets/image/github.svg,1731954703,a4e0a9,404
+a4e0a9,127.0.0.1,GET,http://127.0.0.1:8000/Assets/image/github.svg,1731954703,,404
+24b46d,127.0.0.1,GET,http://127.0.0.1:8000/Assets/image/facebook.svg,1731954703,,404
+220a3a,127.0.0.1,GET,http://127.0.0.1:8000/,1731954749,,404

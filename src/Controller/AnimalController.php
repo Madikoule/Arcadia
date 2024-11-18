@@ -11,8 +11,6 @@ class AnimalController extends AbstractController
     #[Route('/animal', name: 'app_animal')]
     public function index(): Response
     {
-        return $this->render('acceuil.php', [
-            'controller_name' => 'AnimalController',
-        ]);
+        return $this->render('animal/index.html.twig');
     }
 }

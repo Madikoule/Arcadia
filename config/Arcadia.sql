@@ -45,6 +45,7 @@ CREATE TABLE animal (
     habitat VARCHAR(255) NOT NULL,
     age INT NOT NULL,
     description TEXT NOT NULL,
+    image VARCHAR(255) DEFAULT NULL,
     id_habitat INT NOT NULL
     FOREIGN KEY (id_habitat) REFERENCES habitat(id_habitat)
 

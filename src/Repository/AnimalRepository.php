@@ -21,6 +21,12 @@ class AnimalRepository extends ServiceEntityRepository
         parent::__construct($registry, Animal::class);
     }
 
+    public function findAllAnimals(): array
+    {
+
+        return $this->findBy([], ['name' => 'ASC']); // Trie les animaux par nom (ou tout autre critère).
+    }
+
 //    /**
 //     * @return Animal[] Returns an array of Animal objects
 //     */

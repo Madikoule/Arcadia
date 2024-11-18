@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 $animals = [
     0 => [
         'name' => 'Gibbon au main blanches',
@@ -35,10 +32,6 @@ $animals = [
     ]
     
 ];
-
-
-
-
 
 
 ?>

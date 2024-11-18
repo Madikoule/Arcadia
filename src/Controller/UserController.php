@@ -14,19 +14,19 @@ use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
 
 class UserController extends AbstractController {
 
-    #[Route('/create-user', name: 'create_user')]
-    public function createUser(
-        EntityManagerInterface $entityManager,
-        UserPasswordHasherInterface $passwordHasher 
-    ): Response {
+   // #[Route('/create-user', name: 'create_user')]
+  //  public function createUser(
+    //    EntityManagerInterface $entityManager,
+   //     UserPasswordHasherInterface $passwordHasher 
+   // ): Response ;
         // creer un nouvel utilisateur 
-        $user = new Utilisateur(); // création de l'objet utilisateur
-        $user->setEmailUser('');   // $_POST (recup email)
+      //  $user = new Utilisateur(); // création de l'objet utilisateur
+      //  $user->setEmailUser('');   // $_POST (recup email)
 
         // hasher le mot de passe
-        $hashedPassword = $passwordHasher->hashPassword(
-            $user,
-            ''    // $_POST (recup mdp)
-        );
+       // $hashedPassword = $passwordHasher->hashPassword(
+       //     $user,
+        //    ''    // $_POST (recup mdp)
+      //  );
     }
-}
+//}
