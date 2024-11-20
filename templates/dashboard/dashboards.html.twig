@@ -1,0 +1,133 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+
+        <div class="dash">
+            <h1> Dashboard </h1>
+        </div>
+
+    <div class="flex-shrink-0 p-3" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+            <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-5 fw-semibold">Menus</span>
+        </a>
+        <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+            Home
+            </button>
+            <div class="collapse show" id="home-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Habitat</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Services</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Animaux</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            Dashboard
+            </button>
+            <div class="collapse" id="dashboard-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Vétérinaire</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Rapport</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="border-top my-3"></li>
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+            Account
+            </button>
+            <div class="collapse" id="account-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
+                </ul>
+            </div>
+        </li>
+        </ul>
+    </div>
+
+    <section class="container-fluid "  >
+        <nav class="vue">
+
+    <div class=" annee container-fluid">
+        <div class="row"> 
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <?php for ($i = 0; $i < 5; $i++): ?>
+                    <a class="list-group-item <?=$annee - $i === $annee_selection ? 'active' : '';?>" href="dashboard.php?annee=<?=$annee - $i ?>"><?= $annee - $i ?></a>
+
+                    <?php endfor ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+        
+        <div class="container-fluid">
+            <div class="card" style="width: 400px ;">
+                <div class="card-body">
+                    <strong style= "font-size:3em;"><?= $total?></strong>
+                    Visite<?= $total  > 1 ? 's' : '' ?> total
+                </div>
+            </div>
+        </div>
+        </nav>
+        </section>
+
+
+
+</main>
+
+<footer>
+
+        <div class="container col-md-6 foot">
+            <div class="englob">
+                <div class=" col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                    </div>
+                        <h4>Compteur de vue </h4>
+
+      
+                        <p>Il y a <?=$vues?> visite<?php if ($vues > 1): ?>s<?php endif; ?> sur le site </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        
+        <article>
+            <form class="activity">
+                <div class="mb-6 col-md-6">
+                    <label for="exampleFormControlInput1" class="form-label" >Votre Nom</label>
+                    <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="votre nom">
+                </div>
+                <div class="mb-6 col-md-6">
+                    <label for="exampleFormControlTextarea1" class="form-label"> Rédiger message au Vétérinaire</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-dark" type="submit">Envoyé </button>
+                </div>
+            </form>
+        </article>
+        
+            <div class="fermer">
+                <a href="./connexion.php"><button type="button" class="btn btn-warning ">Se deconnecter</button></a>
+            </div>
+  
+
+{% endblock %}
+
+  <?php
+
+            require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'compteur.php';
+
+            $vues= ajouter_vue();
+
+        ?>

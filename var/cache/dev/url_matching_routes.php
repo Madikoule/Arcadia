@@ -17,7 +17,7 @@ return [
         '/home' => [[['_route' => 'home_index', '_controller' => 'App\\Controller\\AccueilController::index'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'app_admin', '_controller' => 'App\\Controller\\AdminController::index'], null, null, null, false, false, null]],
         '/animal' => [[['_route' => 'app_animal', '_controller' => 'App\\Controller\\AnimalController::index'], null, null, null, false, false, null]],
-        '/connexion' => [[['_route' => 'connexion_connexions', '_controller' => 'App\\Controller\\ConnecteController::index'], null, null, null, false, false, null]],
+        '/connexion' => [[['_route' => 'connexion_connexions', '_controller' => 'App\\Controller\\ConnecteController::index'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/contact' => [
             [['_route' => 'contact_contacts', '_controller' => 'App\\Controller\\ContactController::index'], null, ['GET' => 0], null, false, false, null],
             [['_route' => 'contact_form', '_controller' => 'App\\Controller\\ContactController::sendEmail'], null, null, null, false, false, null],

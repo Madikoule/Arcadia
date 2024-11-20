@@ -1,4 +1,5 @@
-//
+<?php
+
     function est_connecte (): bool {
         if (session_status() === PHP_SESSION_NONE) { // si la session n'est pas active dans se cas la je fai un session start
             session_start();   

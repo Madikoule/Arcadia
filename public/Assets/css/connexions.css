@@ -58,8 +58,6 @@
 .container {
 
     font-family: "lato" , sans-serif;
-    margin: 50px 0px;
-    padding: 10%;
     text-align: center;
     justify-content: center;
     background-color: #132D21;
@@ -93,6 +91,7 @@ form {
     color: white;
     display: flex;
     flex-direction: column;
+    margin: 10%;
 }
 
 
@@ -110,10 +109,59 @@ form {
 
 
 
+
+
+
+
+
+@media screen and (max-width:576px) {
+    form {
+        margin: 10%;
+
+    }
+    
+    h2 {
+        font-size: medium;
+        padding-top: 10%;
+    }
+
+}
+
+
+
+@media screen and (min-width:768px) {
+    form  {
+        margin: 5%;
+    }
+
+
+    h2 {
+        font-size: medium;
+        padding-top: 10%;
+    }
+}
+
+
+
+
 @media screen and (min-width:992px) {
 
     .navis a {
         color: white;
+    }
+
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+    h2 {
+        font-size: large;
+        padding-top: 5%;
     }
 
 }
@@ -135,5 +183,9 @@ form {
     }
 
 
+    h2 {
+        font-size: x-large;
+    }
     
 }
+
