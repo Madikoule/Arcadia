@@ -1,7 +1,4 @@
 
-<?php
-session_start();  // démarer la session
-
 // Initialiser le tableau de réponse
 $response = [
     "success" => false,

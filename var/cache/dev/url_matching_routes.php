@@ -19,9 +19,10 @@ return [
         '/animal' => [[['_route' => 'app_animal', '_controller' => 'App\\Controller\\AnimalController::index'], null, null, null, false, false, null]],
         '/connexion' => [[['_route' => 'connexion_connexions', '_controller' => 'App\\Controller\\ConnecteController::index'], null, null, null, false, false, null]],
         '/contact' => [
-            [['_route' => 'contact_contacts', '_controller' => 'App\\Controller\\ContactController::index'], null, null, null, false, false, null],
+            [['_route' => 'contact_contacts', '_controller' => 'App\\Controller\\ContactController::index'], null, ['GET' => 0], null, false, false, null],
             [['_route' => 'contact_form', '_controller' => 'App\\Controller\\ContactController::sendEmail'], null, null, null, false, false, null],
         ],
+        '/contact/send' => [[['_route' => 'contact_send', '_controller' => 'App\\Controller\\ContactController::sendMessage'], null, ['POST' => 0], null, false, false, null]],
         '/dashboard' => [[['_route' => 'app_dashboard', '_controller' => 'App\\Controller\\DashboardController::index'], null, null, null, false, false, null]],
         '/employ' => [[['_route' => 'app_employ_', '_controller' => 'App\\Controller\\EmployéController::index'], null, null, null, true, false, null]],
         '/habitat' => [[['_route' => 'habitat_habitats', '_controller' => 'App\\Controller\\HabitatController::index'], null, null, null, false, false, null]],

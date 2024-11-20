@@ -82,7 +82,7 @@ class __TwigTemplate_6cb697758f58d0a849e9b45fc54d99e2 extends Template
             </nav>
         </div>
 
-        <article class=\"terre container\">
+        <article class=\"terre\" class=\"container\">
             ";
         // line 18
         $context['_parent'] = $context;
@@ -169,7 +169,7 @@ class __TwigTemplate_6cb697758f58d0a849e9b45fc54d99e2 extends Template
             </nav>
         </div>
 
-        <article class=\"terre container\">
+        <article class=\"terre\" class=\"container\">
             {% for habitat in habitats %}
                 <a href=\"..\">
                     <figure class=\"figure\">

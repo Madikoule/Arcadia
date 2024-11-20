@@ -5,7 +5,7 @@ namespace App\Entity;
 use App\Repository\ContactRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ContactRepository::class)]
+#[ORM\Entity(repositoryClass:ContactRepository::class)]
 class Contact
 {
     #[ORM\Id]
@@ -14,36 +14,36 @@ class Contact
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $email_contact = null;
+    private ?string $email = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $description_contact = null;
+    private ?string $description = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getEmailContact(): ?string
+    public function getEmail(): ?string
     {
-        return $this->email_contact;
+        return $this->email;
     }
 
-    public function setEmailContact(string $email_contact): static
+    public function setEmail(string $email): static
     {
-        $this->email_contact = $email_contact;
+        $this->email = $email;
 
         return $this;
     }
 
-    public function getDescriptionContact(): ?string
+    public function getDescription(): ?string
     {
-        return $this->description_contact;
+        return $this->description;
     }
 
-    public function setDescriptionContact(string $description_contact): static
+    public function setDescription(string $description): static
     {
-        $this->description_contact = $description_contact;
+        $this->description = $description;
 
         return $this;
     }

@@ -56,15 +56,16 @@ background-color:#415846;
 
 main {
     background-color: #132D21;
+    margin: 1%;
+    border-radius: 2%;
+
 }
 
 
 .container
 {
     font-family: "lato" , sans-serif;
-    margin: 50px 0px;
-    background:#415846;
-    padding: 10%;
+
 }
 
 
@@ -75,6 +76,7 @@ main {
     height:2px;
     background:#F9DA36;
     margin: 0 auto;
+    margin-top: 10%;
 
 }
 
@@ -86,6 +88,7 @@ main {
     color:#F9DA36;
     font-family: 'Roboto';
     text-shadow: 1px 3px rgb(10, 10, 10);
+    padding-top: 5%;
 
 }
 
@@ -101,6 +104,8 @@ h2 {
 
 .row { 
     justify-content: center;
+
+
 }
 
 /****** debut formulaire *******/
@@ -198,18 +203,14 @@ h2 {
     text-align: center;
 }
 
-footer {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 1%;
 
-}
 
 .logo img{
     width: 30px;;
     height: 30px;
     cursor: pointer;
 }
+
 
 
 @media screen and (min-width:992px) {

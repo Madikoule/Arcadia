@@ -22,10 +22,10 @@
         <link rel="stylesheet" href="{{ asset('Assets/css/responsiv2.css') }}">
         <link rel="stylesheet" href="{{ asset('Assets/css/habitats.css') }}">
         <link rel="stylesheet" href="{{ asset('Assets/css/responsive.css') }}">
-        <link rel="stylesheet" href="{{ asset('Assets/css/responsive.css') }}">
+        <link rel="stylesheet" href="{{ asset('Assets/css/contacte.css') }}">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     {% endblock %}
 
@@ -77,7 +77,6 @@
 
     {% endblock header %} 
 
-        <main>
             
     {% block body %}
 
@@ -88,7 +87,6 @@
 
     {% endblock %}
 
-        </main>
 
 
     {% block footer %}
@@ -101,37 +99,35 @@
             </div>
                 <div class="ouverture">
                     <div class="jour">
-                        <ul>Lundi à Samedi <br> Ouvert 10H00 à 20HOO</ul>
+                        <ul>Lundi au Samedi <br> Ouvert à partir de 10H00 à 20HOO</ul>
                     </div>
 
             <div class="logo">
                 <h6>Nos Réseaux :</h6>
                     <a href="https://github.com/Madikoule"><img src="{{ asset('Assets/image/github.svg') }}" alt="GitHub"></a>
                     <a href="https://www.facebook.com/"><img src="{{ asset('Assets/image/facebook.svg') }}" alt="Facebook"></a>
-                    <a href="http://linkedin.com"><img src="{{ asset('Assets/image/linkedin.svg') }}" alt="LinkedIn"></a>
+                    <a href="http://linkedin.com"><img src="{{ asset('Assets/image/linkedin.svg') }}" alt="Linkedin"></a>
                 </div>
             <div class="adress">
-                <p>Forêt de Brocéliande, Bretagne 35380 Cedex</p>
-                <p>© 2024 Arcadia, Zoo</p>
+                <p>Forêt de Brocéliande,<br> Bretagne 35380 Cedex</p>
             </div>
         </div>
-    </div>
+    
 
 
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class=" fin container">
-                <div class="col-md-4 d-flex align-items-center">
+                <div class="col-md-4 d-flex align-items-center justify-content-center">
                     <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
                         <svg class="bi" width="30" height="24">
                             <use xlink:href="#bootstrap"></use>
                         </svg>
                     </a>
-                    <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Arcadia,Zoo </span> 
+                    <span>© 2024 Arcadia,Zoo </span> 
                 </div>
-
             </div>
         </footer>
-    
+    </div>
 
     {% endblock %}
     </body>

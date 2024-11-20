@@ -21,6 +21,7 @@ return [
     'app_animal' => [[], ['_controller' => 'App\\Controller\\AnimalController::index'], [], [['text', '/animal']], [], [], []],
     'connexion_connexions' => [[], ['_controller' => 'App\\Controller\\ConnecteController::index'], [], [['text', '/connexion']], [], [], []],
     'contact_contacts' => [[], ['_controller' => 'App\\Controller\\ContactController::index'], [], [['text', '/contact']], [], [], []],
+    'contact_send' => [[], ['_controller' => 'App\\Controller\\ContactController::sendMessage'], [], [['text', '/contact/send']], [], [], []],
     'app_dashboard' => [[], ['_controller' => 'App\\Controller\\DashboardController::index'], [], [['text', '/dashboard']], [], [], []],
     'app_employ_' => [[], ['_controller' => 'App\\Controller\\EmployéController::index'], [], [['text', '/employ/']], [], [], []],
     'habitat_habitats' => [[], ['_controller' => 'App\\Controller\\HabitatController::index'], [], [['text', '/habitat']], [], [], []],

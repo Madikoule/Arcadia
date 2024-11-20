@@ -46,12 +46,6 @@ class __TwigTemplate_8ea8398de95f8355512780620f881ca5 extends Template
 
         // line 1
         yield "
-<?php
-session_start();
-
-require_once './partials/send_message.php';
-
-?>
 
 
 <!DOCTYPE html>
@@ -226,12 +220,6 @@ require_once './partials/send_message.php';
     public function getSourceContext(): Source
     {
         return new Source("
-<?php
-session_start();
-
-require_once './partials/send_message.php';
-
-?>
 
 
 <!DOCTYPE html>

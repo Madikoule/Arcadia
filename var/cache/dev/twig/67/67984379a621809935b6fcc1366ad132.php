@@ -93,20 +93,18 @@ class __TwigTemplate_6b7d8567ed6894b77fd7d0f5f5e93afe extends Template
         // line 78
         yield " 
 
-        <main>
             
     ";
-        // line 82
+        // line 81
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 90
+        // line 89
         yield "
-        </main>
 
 
     ";
-        // line 94
+        // line 92
         yield from $this->unwrap()->yieldBlock('footer', $context, $blocks);
-        // line 137
+        // line 133
         yield "    </body>
 
 
@@ -175,11 +173,11 @@ class __TwigTemplate_6b7d8567ed6894b77fd7d0f5f5e93afe extends Template
         yield "\">
         <link rel=\"stylesheet\" href=\"";
         // line 25
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Assets/css/responsive.css"), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Assets/css/contacte.css"), "html", null, true);
         yield "\">
+        <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap\" rel=\"stylesheet\">
-        <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" rel=\"stylesheet\">
         <link href=\"https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css\" rel=\"stylesheet\"/>
     ";
         
@@ -290,7 +288,7 @@ class __TwigTemplate_6b7d8567ed6894b77fd7d0f5f5e93afe extends Template
         return; yield '';
     }
 
-    // line 82
+    // line 81
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -300,7 +298,7 @@ class __TwigTemplate_6b7d8567ed6894b77fd7d0f5f5e93afe extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 83
+        // line 82
         yield "
 
 
@@ -317,7 +315,7 @@ class __TwigTemplate_6b7d8567ed6894b77fd7d0f5f5e93afe extends Template
         return; yield '';
     }
 
-    // line 94
+    // line 92
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -327,7 +325,7 @@ class __TwigTemplate_6b7d8567ed6894b77fd7d0f5f5e93afe extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 95
+        // line 93
         yield "
         <footer>
 
@@ -337,46 +335,44 @@ class __TwigTemplate_6b7d8567ed6894b77fd7d0f5f5e93afe extends Template
             </div>
                 <div class=\"ouverture\">
                     <div class=\"jour\">
-                        <ul>Lundi à Samedi <br> Ouvert 10H00 à 20HOO</ul>
+                        <ul>Lundi au Samedi <br> Ouvert à partir de 10H00 à 20HOO</ul>
                     </div>
 
             <div class=\"logo\">
                 <h6>Nos Réseaux :</h6>
                     <a href=\"https://github.com/Madikoule\"><img src=\"";
-        // line 109
+        // line 107
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Assets/image/github.svg"), "html", null, true);
         yield "\" alt=\"GitHub\"></a>
                     <a href=\"https://www.facebook.com/\"><img src=\"";
-        // line 110
+        // line 108
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Assets/image/facebook.svg"), "html", null, true);
         yield "\" alt=\"Facebook\"></a>
                     <a href=\"http://linkedin.com\"><img src=\"";
-        // line 111
+        // line 109
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("Assets/image/linkedin.svg"), "html", null, true);
-        yield "\" alt=\"LinkedIn\"></a>
+        yield "\" alt=\"Linkedin\"></a>
                 </div>
             <div class=\"adress\">
-                <p>Forêt de Brocéliande, Bretagne 35380 Cedex</p>
-                <p>© 2024 Arcadia, Zoo</p>
+                <p>Forêt de Brocéliande,<br> Bretagne 35380 Cedex</p>
             </div>
         </div>
-    </div>
+    
 
 
         <footer class=\"d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top\">
             <div class=\" fin container\">
-                <div class=\"col-md-4 d-flex align-items-center\">
+                <div class=\"col-md-4 d-flex align-items-center justify-content-center\">
                     <a href=\"/\" class=\"mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1\">
                         <svg class=\"bi\" width=\"30\" height=\"24\">
                             <use xlink:href=\"#bootstrap\"></use>
                         </svg>
                     </a>
-                    <span class=\"mb-3 mb-md-0 text-body-secondary\">© 2024 Arcadia,Zoo </span> 
+                    <span>© 2024 Arcadia,Zoo </span> 
                 </div>
-
             </div>
         </footer>
-    
+    </div>
 
     ";
         
@@ -401,7 +397,7 @@ class __TwigTemplate_6b7d8567ed6894b77fd7d0f5f5e93afe extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  355 => 111,  351 => 110,  347 => 109,  331 => 95,  321 => 94,  304 => 83,  294 => 82,  273 => 69,  267 => 66,  261 => 63,  255 => 60,  238 => 48,  232 => 44,  222 => 43,  208 => 35,  205 => 34,  195 => 33,  178 => 25,  174 => 24,  170 => 23,  166 => 22,  162 => 21,  158 => 20,  155 => 19,  145 => 18,  125 => 13,  110 => 137,  108 => 94,  102 => 90,  100 => 82,  94 => 78,  92 => 43,  85 => 38,  83 => 33,  79 => 31,  77 => 18,  73 => 16,  68 => 13,  54 => 1,);
+        return array (  353 => 109,  349 => 108,  345 => 107,  329 => 93,  319 => 92,  302 => 82,  292 => 81,  271 => 69,  265 => 66,  259 => 63,  253 => 60,  236 => 48,  230 => 44,  220 => 43,  206 => 35,  203 => 34,  193 => 33,  176 => 25,  172 => 24,  168 => 23,  164 => 22,  160 => 21,  156 => 20,  153 => 19,  143 => 18,  123 => 13,  108 => 133,  106 => 92,  101 => 89,  99 => 81,  94 => 78,  92 => 43,  85 => 38,  83 => 33,  79 => 31,  77 => 18,  73 => 16,  68 => 13,  54 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -430,10 +426,10 @@ class __TwigTemplate_6b7d8567ed6894b77fd7d0f5f5e93afe extends Template
         <link rel=\"stylesheet\" href=\"{{ asset('Assets/css/responsiv2.css') }}\">
         <link rel=\"stylesheet\" href=\"{{ asset('Assets/css/habitats.css') }}\">
         <link rel=\"stylesheet\" href=\"{{ asset('Assets/css/responsive.css') }}\">
-        <link rel=\"stylesheet\" href=\"{{ asset('Assets/css/responsive.css') }}\">
+        <link rel=\"stylesheet\" href=\"{{ asset('Assets/css/contacte.css') }}\">
+        <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap\" rel=\"stylesheet\">
-        <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" rel=\"stylesheet\">
         <link href=\"https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css\" rel=\"stylesheet\"/>
     {% endblock %}
 
@@ -485,7 +481,6 @@ class __TwigTemplate_6b7d8567ed6894b77fd7d0f5f5e93afe extends Template
 
     {% endblock header %} 
 
-        <main>
             
     {% block body %}
 
@@ -496,7 +491,6 @@ class __TwigTemplate_6b7d8567ed6894b77fd7d0f5f5e93afe extends Template
 
     {% endblock %}
 
-        </main>
 
 
     {% block footer %}
@@ -509,37 +503,35 @@ class __TwigTemplate_6b7d8567ed6894b77fd7d0f5f5e93afe extends Template
             </div>
                 <div class=\"ouverture\">
                     <div class=\"jour\">
-                        <ul>Lundi à Samedi <br> Ouvert 10H00 à 20HOO</ul>
+                        <ul>Lundi au Samedi <br> Ouvert à partir de 10H00 à 20HOO</ul>
                     </div>
 
             <div class=\"logo\">
                 <h6>Nos Réseaux :</h6>
                     <a href=\"https://github.com/Madikoule\"><img src=\"{{ asset('Assets/image/github.svg') }}\" alt=\"GitHub\"></a>
                     <a href=\"https://www.facebook.com/\"><img src=\"{{ asset('Assets/image/facebook.svg') }}\" alt=\"Facebook\"></a>
-                    <a href=\"http://linkedin.com\"><img src=\"{{ asset('Assets/image/linkedin.svg') }}\" alt=\"LinkedIn\"></a>
+                    <a href=\"http://linkedin.com\"><img src=\"{{ asset('Assets/image/linkedin.svg') }}\" alt=\"Linkedin\"></a>
                 </div>
             <div class=\"adress\">
-                <p>Forêt de Brocéliande, Bretagne 35380 Cedex</p>
-                <p>© 2024 Arcadia, Zoo</p>
+                <p>Forêt de Brocéliande,<br> Bretagne 35380 Cedex</p>
             </div>
         </div>
-    </div>
+    
 
 
         <footer class=\"d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top\">
             <div class=\" fin container\">
-                <div class=\"col-md-4 d-flex align-items-center\">
+                <div class=\"col-md-4 d-flex align-items-center justify-content-center\">
                     <a href=\"/\" class=\"mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1\">
                         <svg class=\"bi\" width=\"30\" height=\"24\">
                             <use xlink:href=\"#bootstrap\"></use>
                         </svg>
                     </a>
-                    <span class=\"mb-3 mb-md-0 text-body-secondary\">© 2024 Arcadia,Zoo </span> 
+                    <span>© 2024 Arcadia,Zoo </span> 
                 </div>
-
             </div>
         </footer>
-    
+    </div>
 
     {% endblock %}
     </body>

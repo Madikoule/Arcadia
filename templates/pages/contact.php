@@ -1,10 +1,4 @@
 
-<?php
-session_start();
-
-require_once './partials/send_message.php';
-
-?>
 
 
 <!DOCTYPE html>

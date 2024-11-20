@@ -192,6 +192,7 @@
 .animaux img {
     border-radius: 5%;
     width:330px;
+    height: 220px;
     box-shadow: 24px 19px 8px -8px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
@@ -225,7 +226,7 @@
 
 
 .panda {
-    padding-top: 6%;
+    padding: 3%;
 }
 
 .panda h4 , p {
@@ -239,9 +240,6 @@
     padding: 3%;
 }
 
-.komodo {
-    padding-top: 6%;
-}
 
 .komodo h4 , p {
     padding: 3%;
@@ -327,21 +325,21 @@
 
 .star-rating {
     direction: rtl; /* Inverse la direction pour une meilleure interaction avec les étoiles */
-    display: inline-block; /* Affiche les étoiles en ligne */
-    padding: 20px; /* Ajoute du padding autour des étoiles */
+    display: inline-block; 
+    padding: 20px;
 }
 
 
 .star-rating input[type='radio'] {
-    display: none; /* Cache les boutons radio */
+    display: none; 
 }
 
 
 .star-rating label {
-    color: #ddd; /* Couleur des étoiles non cochées */
-    font-size: 30px; /* Taille des étoiles */
+    color: #ddd; 
+    font-size: 30px; 
     padding: 0;
-    cursor: pointer; /* Curseur en forme de main pour les labels */
+    cursor: pointer;
 }
 
 
@@ -352,47 +350,46 @@
 
 .star-rating label:hover,
 .star-rating label:hover ~ label {
-    color: #f5c518; /* Couleur des étoiles au survol */
+    color: #f5c518;  /* Couleur des étoiles au survol */
 }
 
 
 /* Styles pour la carte d'avis soumise */
 .review-card {
-    font-size: 0.875rem; /* Taille de police plus petite */
-    padding: 10px; /* Réduire le padding */
-    margin-bottom: 10px; /* Espacement entre les avis */
+    font-size: 0.875rem; 
+    padding: 10px; 
+    margin-bottom: 10px;
 }
 
 
 .review-card h4 {
-    font-size: 1rem; /* Taille de police du nom plus petite */
-    margin-bottom: 5px; /* Espacement en bas du nom */
+    font-size: 1rem; 
+    margin-bottom: 5px; 
 }
 
 .review-card p {
-    margin-bottom: 5px; /* Réduire l'espacement en bas des commentaires */
+    margin-bottom: 5px; 
 }
 
 
 .review-card .rating {
-    font-size: 1rem; /* Taille des étoiles plus petite */
+    font-size: 1rem; 
 }
 
 
-/* Style pour le conteneur du formulaire et des avis */
 .main-container {
-    display: flex; /* Utilise Flexbox pour organiser les éléments en ligne */
+    display: flex; 
 }
 
 
 .form-container {
-    flex: 2; /* Le formulaire occupe 2 fois plus d'espace que la section des avis */
+    flex: 2; 
 }
 
 
 .reviews-container {
-    flex: 1; /* La section des avis occupe 1 fois l'espace */
-    margin-left: 20px; /* Ajoute un espace à gauche pour séparer le formulaire et les avis */
+    flex: 1; 
+    margin-left: 20px; 
 }
 
 
@@ -474,19 +471,15 @@ p {
     height: 30px;
     cursor: pointer;
     
-
 }
 
 .fin span{
     display: flex;
     justify-content: space-around;
-
-}
-
+    color: #fff;
 
 
-.fin {
-    background-color:#eaf5f0;
+
 }
 
 

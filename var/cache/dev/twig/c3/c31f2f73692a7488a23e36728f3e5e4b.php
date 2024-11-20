@@ -94,6 +94,9 @@ class __TwigTemplate_fd80af5832ba1e656da0eb819abcb6eb extends Template
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\" crossorigin=\"anonymous\"></script>
 
 
+
+
+    </div>
 </html>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -171,6 +174,9 @@ class __TwigTemplate_fd80af5832ba1e656da0eb819abcb6eb extends Template
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\" crossorigin=\"anonymous\"></script>
 
 
+
+
+    </div>
 </html>", "admin/admin.php", "/Users/youssoufdoucoure/Desktop/ENV./Arcadia/templates/admin/admin.php");
     }
 }

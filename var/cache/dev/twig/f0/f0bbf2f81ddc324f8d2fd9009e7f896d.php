@@ -45,12 +45,9 @@ class __TwigTemplate_c99826c75b54d58ead3acb0106556e0c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "connexion/connexion.php"));
 
         // line 1
-        yield "<?php
+        yield "
 
-
-?>
-
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang=\"fr\">
 <head>
     <meta charset=\"UTF-8\">
@@ -188,12 +185,9 @@ require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SE
 
     public function getSourceContext(): Source
     {
-        return new Source("<?php
+        return new Source("
 
-
-?>
-
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang=\"fr\">
 <head>
     <meta charset=\"UTF-8\">

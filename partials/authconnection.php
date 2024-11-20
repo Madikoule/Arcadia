@@ -1,53 +1,45 @@
 
-<?php
-session_start();    // Démarrer une session pour la gestion des messages d'erreur ou de succès
 
-$erreur = null ;
-// Vérifier que les champs email et password ne sont pas vides
+session_start(); // Démarrer une session pour la gestion des messages d'erreur ou de succès
 
-if (!empty ($_POST['email']) && !empty($_POST['password'])) {
-        // Corriger l'erreur dans la vérification du mot de passe
-    if ($_POST['email'] === 'madydouc@yahoo.com' && $_POST['password'] === 'arcadia123') {
-                // Démarrer une session pour indiquer que l'utilisateur est connecté
-        $_SESSION['connecte'] = 1;
-                // Redirection vers la page dashboard
-        header('Location: ./dashboard.php');
-        // on n'est connecter
-        
-        // Arrêter l'exécution du script après la redirection
-        exit();
-    } else {
-        // Message d'erreur si les informations de connexion sont incorrectes
-        $erreur = "Identification incorrecte";
+// Initialiser une variable d'erreur
+$erreur = null;
 
-    }
-    
-}
-
-
+// Vérification de la soumission du formulaire
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer et nettoyer les données du formulaire
+    // Récupérer et valider les données du formulaire
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $password = $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-    $_POST['password'];
+    $password = $_POST['password'];
 
-    // Vérification que l'email est valide
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error = "Adresse email invalide.";
-    } elseif (empty($password)) {
-        $error = "Le mot de passe est requis.";
+    // Validation des champs
+    if (empty($email) || empty($password)) {
+        $erreur = "Veuillez remplir tous les champs.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $erreur = "Adresse email invalide.";
     } else {
-        // Hash du mot de passe avant stockage (exemple d'utilisation de bcrypt)
+        // Vérifier les identifiants
+        // Ici, vous pouvez vérifier dans une base de données si l'email et le mot de passe sont valides
+        // Exemple avec des identifiants fictifs pour l'exemple
+        $validEmail = 'madydouc@yahoo.com';
+        $validPasswordHash = '$2y$10$0a5ZswxqOe3.XYDbEklzJeI12D/Z32RhxUBKKsGZln9F59c0uH3Eu'; // Le mot de passe "arcadia123" haché avec bcrypt
 
-        // Exécuter ici la logique de stockage ou d'authentification en base de données
+        if ($email === $validEmail && password_verify($password, $validPasswordHash)) {
+            // Authentification réussie, démarrer la session utilisateur
+            $_SESSION['connecte'] = 1;
+            $_SESSION['email'] = $email; // Vous pouvez stocker l'email ou d'autres infos
 
-        // Exemple: $db->prepare("INSERT INTO users (email, password) VALUES (:email, :password)");
-
+            // Rediriger l'utilisateur vers la page d'accueil ou une page protégée
+            header('Location: dashboard.php');
+            exit();
+        } else {
+            $erreur = "Identification incorrecte.";
+        }
     }
-
 }
-
-
-
 
 ?>
+
+
+
+
+
