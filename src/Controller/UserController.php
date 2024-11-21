@@ -26,9 +26,13 @@ class UserController extends AbstractController
     public function register(Request $request): Response
     {
         $user = new Utilisateur();
-        $user->setEmailUser($request->get('email_user')); // Exemples d'attributs
-        $user->setNameUser($request->get('name_user'));
-        $user->setFirstnameUser($request->get('firstname_user'));
+        $user->setEmail($request->get('email')); // Exemples d'attributs
+        $user->setNameUser($request->get('name'));
+        $user->setFirstname($request->get('firstname'));
+
+        // Hachez le mot de passe avant de le stocker
+        $hashedPassword = $this->passwordHasher->hashPassword($user, $request->get('password'));
+        $user->setPassword($hashedPassword);
 
 
         // Persister l'utilisateur dans la base de données

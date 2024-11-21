@@ -19,26 +19,20 @@ class UtilisateurRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Utilisateur::class);
-
     }
 
-    public function createUser($id, $name_user, $firstname_user,  $password_user, $email_user): Utilisateur
+    
+        public function findByEmail(string $email): ?Utilisateur
     {
-        
+            return $this->findOneBy(['email' => $email]);
     }
+}
+
+
+
+    
 
 //    /**
-//     * @return Utilisateur[] Returns an array of Utilisateur objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('u')
-//            ->andWhere('u.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('u.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
 //        ;
 //    }
 
@@ -51,4 +45,4 @@ class UtilisateurRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
-}
+

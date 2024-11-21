@@ -6,47 +6,32 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Service\AuthService;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 
 class ConnecteController extends AbstractController
 {
-    private AuthService $authService;
-
-    
-    public function __construct(AuthService $authService)
-    {
-        $this->authService = $authService;
-    }
 
     #[Route('/connexion', name: 'connexion_connexions', methods: ['GET', 'POST'])]
-    public function index(Request $request): Response
+    public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        $erreur = null;
 
-        // Vérification de la soumission du formulaire
-        if ($request->isMethod('POST')) {
-            $email = filter_var($request->request->get('email'), FILTER_SANITIZE_EMAIL);
-            $password = $request->request->get('password');
+        $error = $authenticationUtils->getLastAuthenticationError();
 
-            // Validation des champs
-            if (empty($email_user) || empty($password_user)) {
-                $erreur = "Veuillez remplir tous les champs.";
-            } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $erreur = "Adresse email invalide.";
-            } elseif (!$this->authService->validateCredentials($email_user,$password_user)) {
-                $erreur = "Identification incorrecte.";
-            } else {
-                // Connexion réussie
-                $this->addFlash('success', 'Connexion réussie !');
-                return $this->redirectToRoute('/dashboard');
-            }
-        }
+        $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('user/connexion.html.twig', [
-            'erreur' => $erreur,
+        return $this->render('connexion/connexions.html.twig', [
+            'last_username' => $lastUsername,
+            'error' => $error,
         ]);
+
+        $user->setRoles(['ROLE_USER', 'ROLE_ADMIN']);
+
+    }
+
+    #[Route('/logout', name: 'app_logout')]
+    public function logout()
+    {
+
     }
 }
-
-

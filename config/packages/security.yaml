@@ -7,15 +7,23 @@ security:
         # used to reload user from session & other features (e.g. switch_user)
         app_user_provider:
             entity:
-                class: App\Entity\Id
+                class: App\Entity\Utilisateur
                 property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
+    
         main:
             lazy: true
+            pattern: ^/
+            stateless: true  # Utilisation d'un authenticator stateless
+            custom_authenticator: App\Security\StatelessAuthenticator
             provider: app_user_provider
+            # Pas de gestion de session (stateless)
+
+
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -30,7 +38,7 @@ security:
         # - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/contact, }
         # Règles d'accès pour d'autres routes
-        - { path: ^/dashboard, roles:  }  # Exemple de protection de la page de tableau de bord
+        - { path: ^/dashboard, roles: ROLE }  # Exemple de protection de la page de tableau de bord
 
 when@test:
     security:

@@ -97,7 +97,51 @@ class __TwigTemplate_fd80af5832ba1e656da0eb819abcb6eb extends Template
 
 
     </div>
-</html>";
+</html>
+
+
+
+
+
+
+private AuthService \$authService;
+
+    
+public function __construct(AuthService \$authService)
+{
+    \$this->authService = \$authService;
+}
+
+#[Route('/connexion', name: 'connexion_connexions', methods: ['GET', 'POST'])]
+public function index(Request \$request): Response
+{
+    \$erreur = null;
+
+    // Vérification de la soumission du formulaire
+    if (\$request->isMethod('POST')) {
+        \$email = filter_var(\$request->request->get('email'), FILTER_SANITIZE_EMAIL);
+        \$password = \$request->request->get('password');
+
+        // Validation des champs
+        if (empty(\$email) || empty(\$password)) {
+            \$erreur = \"Veuillez remplir tous les champs.\";
+        } elseif (!filter_var(\$email, FILTER_VALIDATE_EMAIL)) {
+            \$erreur = \"Adresse email invalide.\";
+        } elseif (!\$this->authService->validateCredentials(\$email,\$password)) {
+            \$erreur = \"Identification incorrecte.\";
+        } else {
+            // Connexion réussie
+            \$this->addFlash('success', 'Connexion réussie !');
+            return \$this->redirectToRoute('app_dashboard');
+        }
+    }
+
+    return \$this->render('user/connexion.html.twig', [
+        'erreur' => \$erreur,
+    ]);
+}
+
+";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -177,6 +221,50 @@ class __TwigTemplate_fd80af5832ba1e656da0eb819abcb6eb extends Template
 
 
     </div>
-</html>", "admin/admin.php", "/Users/youssoufdoucoure/Desktop/ENV./Arcadia/templates/admin/admin.php");
+</html>
+
+
+
+
+
+
+private AuthService \$authService;
+
+    
+public function __construct(AuthService \$authService)
+{
+    \$this->authService = \$authService;
+}
+
+#[Route('/connexion', name: 'connexion_connexions', methods: ['GET', 'POST'])]
+public function index(Request \$request): Response
+{
+    \$erreur = null;
+
+    // Vérification de la soumission du formulaire
+    if (\$request->isMethod('POST')) {
+        \$email = filter_var(\$request->request->get('email'), FILTER_SANITIZE_EMAIL);
+        \$password = \$request->request->get('password');
+
+        // Validation des champs
+        if (empty(\$email) || empty(\$password)) {
+            \$erreur = \"Veuillez remplir tous les champs.\";
+        } elseif (!filter_var(\$email, FILTER_VALIDATE_EMAIL)) {
+            \$erreur = \"Adresse email invalide.\";
+        } elseif (!\$this->authService->validateCredentials(\$email,\$password)) {
+            \$erreur = \"Identification incorrecte.\";
+        } else {
+            // Connexion réussie
+            \$this->addFlash('success', 'Connexion réussie !');
+            return \$this->redirectToRoute('app_dashboard');
+        }
+    }
+
+    return \$this->render('user/connexion.html.twig', [
+        'erreur' => \$erreur,
+    ]);
+}
+
+", "admin/admin.php", "/Users/youssoufdoucoure/Desktop/ENV./Arcadia/templates/admin/admin.php");
     }
 }
