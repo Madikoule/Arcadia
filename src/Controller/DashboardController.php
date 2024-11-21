@@ -3,16 +3,44 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request; 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Service\CompteurService;
+
 
 class DashboardController extends AbstractController
 {
     #[Route('/dashboard', name: 'app_dashboard')]
-    public function index(): Response
+    public function index(Request $request,CompteurService $compteurService): Response
     {
-        return $this->render('dashboard/index.html.twig', [
-            'controller_name' => 'DashboardController',
+
+        $user = $this->getUser(); // Récupère l'utilisateur actuellement authentifié
+    if (!$user) {
+
+        return $this->redirectToRoute('connexion_connexions');
+    }
+    
+        // Incrémenter le compteur de vues
+        $vues = $compteurService->ajouterVue();
+
+        // Obtenir le nombre total de vues
+        $total = $compteurService->nombreVues();
+
+        $annee = date('Y');
+
+        $annee_selection = $request->query->get('annee', $annee);
+
+
+        return $this->render('dashboard/dashboard.html.twig', [
+            'vues' => $vues,
+            'total' => $total,
+            'annee' => $annee, 
+            'annee_selection' => $annee_selection, 
+        
         ]);
     }
 }
+
+    
+

@@ -28,6 +28,7 @@ return [
         '/habitat' => [[['_route' => 'habitat_habitats', '_controller' => 'App\\Controller\\HabitatController::index'], null, null, null, false, false, null]],
         '/rapport' => [[['_route' => 'app_rapport', '_controller' => 'App\\Controller\\RapportController::index'], null, null, null, false, false, null]],
         '/service' => [[['_route' => 'service_services', '_controller' => 'App\\Controller\\ServiceController::index'], null, null, null, false, false, null]],
+        '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\UserController::register'], null, null, null, false, false, null]],
         '/v/t/rinaire' => [[['_route' => 'app_v_t_rinaire', '_controller' => 'App\\Controller\\VétérinaireController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList

@@ -6,12 +6,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Exception\AuthenticationException;
-
+use App\Service\AuthService;
 
 
 class ConnecteController extends AbstractController
 {
+    private AuthService $authService;
+
+    
+    public function __construct(AuthService $authService)
+    {
+        $this->authService = $authService;
+    }
 
     #[Route('/connexion', name: 'connexion_connexions', methods: ['GET', 'POST'])]
     public function index(Request $request): Response
@@ -24,30 +30,23 @@ class ConnecteController extends AbstractController
             $password = $request->request->get('password');
 
             // Validation des champs
-            if (empty($email) || empty($password)) {
+            if (empty($email_user) || empty($password_user)) {
                 $erreur = "Veuillez remplir tous les champs.";
             } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $erreur = "Adresse email invalide.";
+            } elseif (!$this->authService->validateCredentials($email_user,$password_user)) {
+                $erreur = "Identification incorrecte.";
             } else {
-                // Identifiants fictifs pour l'exemple
-                $validEmail = 'madydouc@yahoo.com';
-                $validPasswordHash = '$2y$10$0a5ZswxqOe3.XYDbEklzJeI12D/Z32RhxUBKKsGZln9F59c0uH3Eu'; // "arcadia123"
-
-                if ($email === $validEmail && password_verify($password, $validPasswordHash)) {
-                    // Si l'authentification réussit, démarrez la session utilisateur
-                    $this->addFlash('success', 'Connexion réussie !');
-                    return $this->redirectToRoute('dashboard'); // Rediriger vers une page après connexion
-                } else {
-                    $erreur = "Identification incorrecte.";
-                }
+                // Connexion réussie
+                $this->addFlash('success', 'Connexion réussie !');
+                return $this->redirectToRoute('/dashboard');
             }
         }
 
-        // Rendre le template avec les variables
         return $this->render('user/connexion.html.twig', [
             'erreur' => $erreur,
         ]);
     }
-
 }
+
 

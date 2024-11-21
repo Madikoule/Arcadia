@@ -3,30 +3,38 @@
 namespace App\Controller;
 
 use App\Entity\Utilisateur;
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasher;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Routing\Annotation\Route;
 
-class UserController extends AbstractController {
 
-   // #[Route('/create-user', name: 'create_user')]
-  //  public function createUser(
-    //    EntityManagerInterface $entityManager,
-   //     UserPasswordHasherInterface $passwordHasher 
-   // ): Response ;
-        // creer un nouvel utilisateur 
-      //  $user = new Utilisateur(); // création de l'objet utilisateur
-      //  $user->setEmailUser('');   // $_POST (recup email)
+class UserController extends AbstractController
+{
+    private $passwordHasher;
+    private $entityManager;
 
-        // hasher le mot de passe
-       // $hashedPassword = $passwordHasher->hashPassword(
-       //     $user,
-        //    ''    // $_POST (recup mdp)
-      //  );
+    public function __construct(UserPasswordHasherInterface $passwordHasher, EntityManagerInterface $entityManager)
+    {
+        $this->passwordHasher = $passwordHasher;
+        $this->entityManager = $entityManager;
     }
-//}
+
+    #[Route('/register', name: 'app_register')]
+    public function register(Request $request): Response
+    {
+        $user = new Utilisateur();
+        $user->setEmailUser($request->get('email_user')); // Exemples d'attributs
+        $user->setNameUser($request->get('name_user'));
+        $user->setFirstnameUser($request->get('firstname_user'));
+
+
+        // Persister l'utilisateur dans la base de données
+        $this->entityManager->persist($user);
+        $this->entityManager->flush();
+
+        return $this->redirectToRoute('app_login');
+    }
+}

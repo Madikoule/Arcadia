@@ -6,12 +6,13 @@ use App\Repository\UtilisateurRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UtilisateurRepository::class)]
+
 class Utilisateur
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id_user = null;
 
     #[ORM\Column(length: 100)]
     private ?string $name_user = null;
@@ -19,15 +20,15 @@ class Utilisateur
     #[ORM\Column(length: 100)]
     private ?string $firstname_user = null;
 
-    #[ORM\Column(length: 50)]
+    #[ORM\Column(length: 255)]
     private ?string $password_user = null;
 
     #[ORM\Column(length: 100)]
     private ?string $email_user = null;
 
-    public function getId(): ?int
+    public function getIdUser(): ?int
     {
-        return $this->id;
+        return $this->id_user;
     }
         // get pour recuperer des donnée
     public function getNameUser(): ?string
@@ -76,6 +77,14 @@ class Utilisateur
         $this->email_user = $email_user;
 
         return $this;
+
     }
+
+        public function isPasswordValid(string $password): bool
+    {
+        // Vérifier si le mot de passe donné est valide 
+        return password_verify($password, $this->password_user);
+    }
+
 
 }

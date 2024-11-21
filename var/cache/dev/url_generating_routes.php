@@ -27,6 +27,7 @@ return [
     'habitat_habitats' => [[], ['_controller' => 'App\\Controller\\HabitatController::index'], [], [['text', '/habitat']], [], [], []],
     'app_rapport' => [[], ['_controller' => 'App\\Controller\\RapportController::index'], [], [['text', '/rapport']], [], [], []],
     'service_services' => [[], ['_controller' => 'App\\Controller\\ServiceController::index'], [], [['text', '/service']], [], [], []],
+    'app_register' => [[], ['_controller' => 'App\\Controller\\UserController::register'], [], [['text', '/register']], [], [], []],
     'app_v_t_rinaire' => [[], ['_controller' => 'App\\Controller\\VétérinaireController::index'], [], [['text', '/v/t/rinaire']], [], [], []],
     'contact_form' => [[], ['_controller' => 'App\\Controller\\ContactController::sendEmail'], [], [['text', '/contact']], [], [], []],
 ];

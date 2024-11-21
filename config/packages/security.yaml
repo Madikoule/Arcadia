@@ -30,7 +30,7 @@ security:
         # - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/contact, }
         # Règles d'accès pour d'autres routes
-        - { path: ^/dashboard, roles: ROLE_USER }  # Exemple de protection de la page de tableau de bord
+        - { path: ^/dashboard, roles:  }  # Exemple de protection de la page de tableau de bord
 
 when@test:
     security:
