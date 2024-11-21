@@ -9,3 +9,15 @@ There were 2 errors:
 
 1. App\Tests\Controller\DashboardControllerTest::testRedirectToLoginIfNotAuthenticated
 LogicException: You must set the KERNEL_CLASS environment variable to the fully-qualified class name of your Kernel in phpunit.xml / phpunit.xml.dist or override the "App\Tests\Controller\DashboardControllerTest::createKernel()" or "App\Tests\Controller\DashboardControllerTest::getKernelClass()" method.
+
+
+
+"App\\Tests\\Controller\\AccueilControllerTest::testIndex":0.021
+
+
+Time: 00:00.026, Memory: 10.00 MB
+
+There was 1 error:
+
+1 App\Tests\Controller\AccueilControllerTest::testIndex
+Error: Call to a member function has() on null
