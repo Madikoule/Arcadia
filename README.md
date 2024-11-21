@@ -96,3 +96,33 @@ En cas d'absence d'un utilisateur avec l'email fourni, le message d'erreur sera 
 Ces messages sont renvoyés dans une réponse HTTP avec le code d'état 401 Unauthorized.
 
 
+
+## Lien de déploiement
+L'application est déployée et accessible en ligne : [Lien vers l'application déployée](https://votre-application.herokuapp.com)
+
+## Fonctionnalités principales
+- Liste des principales fonctionnalités de votre application.
+- Expliquez brièvement comment chaque fonctionnalité fonctionne.
+
+## Diagrammes et Documentation Technique
+Voici les documents expliquant l'architecture et la base de données de votre application :
+- [Diagramme de cas d'utilisation](https://drive.google.com/file/d/1GhyMRgsY0UG-6Sj4wpHMBaNiVESJ6h9B/view?usp=drive_link)
+- [Diagramme MCD](https://drive.google.com/file/d/13lI8ukXCZSR6ercOvI4V9P5xMpYlO42D/view?usp=drive_link)
+- [Diagramme de Séquence] (https://drive.google.com/file/d/1GhyMRgsY0UG-6Sj4wpHMBaNiVESJ6h9B/view?usp=sharing)
+
+## Installation et utilisation locale
+Si quelqu'un souhaite exécuter ce projet en local, voici les étapes à suivre :
+1. Clonez le repository : `git clone https://github.com/username/repository.git`
+2. Installez les dépendances : `composer install`
+3. Configurez la base de données : `php bin/console doctrine:migrations:migrate`
+4. Lancez l'application : `symfony serve`
+5. Accédez à l'application via [http://localhost:8000](http://localhost:8000)
+
+## Démonstration
+Lors de l'évaluation, vous pouvez tester l'application en vous inscrivant avec des données utilisateur.
+
+## Technologies utilisées
+- PHP 8.1+
+- Symfony 6.2
+- MySQL / Doctrine
+- Javascript
