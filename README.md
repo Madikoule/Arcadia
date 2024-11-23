@@ -89,10 +89,6 @@ Mot de Passe : Le mot de passe des utilisateurs est haché avant d'être stocké
 ## Lien de déploiement
 L'application est déployée et accessible en ligne : 
 
-## Fonctionnalités principales
-- Liste des principales fonctionnalités de votre application.
-- Expliquez brièvement comment chaque fonctionnalité fonctionne.
-
 ## Diagrammes et Documentation Technique
 Voici les documents expliquant l'architecture et la base de données de votre application :
 - [Diagramme de cas d'utilisation](https://drive.google.com/file/d/1GhyMRgsY0UG-6Sj4wpHMBaNiVESJ6h9B/view?usp=drive_link)
@@ -101,7 +97,7 @@ Voici les documents expliquant l'architecture et la base de données de votre ap
 
 ## Installation et utilisation locale
 Si quelqu'un souhaite exécuter ce projet en local, voici les étapes à suivre :
-1. Clonez le repository : `git clone https://github.com/username/repository.git`
+1. Clonez le repository : `git clone https://github.com/Madikoule/Arcadia.git
 2. Installez les dépendances : `composer install`
 3. Configurez la base de données : `php bin/console doctrine:migrations:migrate`
 4. Lancez l'application : `symfony serve`
