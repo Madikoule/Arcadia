@@ -91,9 +91,15 @@ L'application est déployée et accessible en ligne :
 
 ## Diagrammes et Documentation Technique
 Voici les documents expliquant l'architecture et la base de données de votre application :
-- [Diagramme de cas d'utilisation](https://drive.google.com/file/d/1GhyMRgsY0UG-6Sj4wpHMBaNiVESJ6h9B/view?usp=drive_link)
-- [Diagramme MCD](https://drive.google.com/file/d/13lI8ukXCZSR6ercOvI4V9P5xMpYlO42D/view?usp=drive_link)
-- [Diagramme de Séquence] (https://drive.google.com/file/d/1GhyMRgsY0UG-6Sj4wpHMBaNiVESJ6h9B/view?usp=sharing)
+
+- Diagramme de cas d'utilisation : (https://drive.google.com/file/d/1GhyMRgsY0UG-6Sj4wpHMBaNiVESJ6h9B/view?usp=drive_link)
+
+- Diagramme MCD : (https://drive.google.com/file/d/13lI8ukXCZSR6ercOvI4V9P5xMpYlO42D/view?usp=drive_link)
+
+- Diagramme MLD : https://drive.google.com/file/d/1qRxOiQp_z1NpNNslTB9akV3Lf-DCXLgX/view?usp=drive_link
+
+- Diagramme de Séquence : (https://drive.google.com/file/d/1ElgkqYLrnLXig56-lBD52GYTnxAKzcVt/view?usp=drive_link)
+
 
 ## Installation et utilisation locale
 Si quelqu'un souhaite exécuter ce projet en local, voici les étapes à suivre :
