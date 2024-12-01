@@ -329,8 +329,8 @@
       <tag name="routing.route_loader"/>
     </service>
     <service id="App\Security\StatelessAuthenticator" class="App\Security\StatelessAuthenticator" autowire="true" autoconfigure="true">
+      <argument type="service" id="App\Repository\UtilisateurRepository"/>
       <argument type="service" id="security.user_password_hasher"/>
-      <argument type="service" id="security.user.provider.concrete.app_user_provider"/>
     </service>
     <service id="App\Controller\AccueilController" class="App\Controller\AccueilController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -5214,7 +5214,7 @@
       <call method="add">
         <argument type="service" id=".security.request_matcher.pbyKmZE"/>
         <argument type="collection">
-          <argument>ROLE_USER</argument>
+          <argument>ROLE</argument>
         </argument>
         <argument>null</argument>
       </call>

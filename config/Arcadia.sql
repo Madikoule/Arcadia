@@ -1,5 +1,7 @@
 
-USE arcadia 
+
+CREATE DATABASE IF NOT EXISTS arcadia;
+USE arcadia;
 
 CREATE TABLE utilisateur (
     id_user INT PRIMARY KEY AUTO_INCREMENT,
@@ -8,7 +10,6 @@ CREATE TABLE utilisateur (
     password_user VARCHAR(60) NOT NULL,
     email_user VARCHAR(100) NOT NULL,
     id_roles INT NOT NULL,
-    FOREIGN KEY (id_roles) REFERENCES roles(id_roles)
 );
 
 CREATE TABLE services (
@@ -35,7 +36,6 @@ CREATE TABLE avis (
     note_avis INT NOT NULL,
     email_avis VARCHAR(100) NOT NULL,
     id_user INT NOT NULL,
-    FOREIGN KEY (id_user) REFERENCES utilisateur(id_user)
 );
 
 CREATE TABLE animal (
@@ -46,9 +46,7 @@ CREATE TABLE animal (
     age INT NOT NULL,
     description TEXT NOT NULL,
     image VARCHAR(255) DEFAULT NULL,
-    id_habitat INT NOT NULL
-    FOREIGN KEY (id_habitat) REFERENCES habitat(id_habitat)
-
+    id_habitat INT NOT NULL,
 );
 
 CREATE TABLE nourriture ( 
@@ -65,7 +63,6 @@ CREATE TABLE horaire (
     ouverture_horaire TIME NOT NULL,
     fermeture_horaire TIME NOT NULL,
     id_user INT NOT NULL,
-    FOREIGN KEY (id_user) REFERENCES utilisateur(id_user)
 );
 
 CREATE TABLE image ( 
@@ -79,15 +76,12 @@ CREATE TABLE jours (
     name_jours VARCHAR(100) NOT NULL,
     statut_jours VARCHAR(100) NOT NULL,
     id_services INT NOT NULL,
-    FOREIGN KEY (id_services) REFERENCES services(id_services)
 );
-
 
 CREATE TABLE rapport (  
     id_rapport INT PRIMARY KEY AUTO_INCREMENT,
     name_rapport VARCHAR(255) NOT NULL
 );
-
 
 CREATE TABLE commentaire_habitat (
     id_commentaire_habitat INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -96,12 +90,10 @@ CREATE TABLE commentaire_habitat (
     etat_habitat VARCHAR(255) NOT NULL
 );
 
-
 CREATE TABLE statistique (
     id_consultation INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    nombre_consultation INT NOT NULL ,
+    nombre_consultation INT NOT NULL
 );
-
 
 -- Insertions de données
 INSERT INTO roles (name_roles) VALUES

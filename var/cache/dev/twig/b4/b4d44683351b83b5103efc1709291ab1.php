@@ -103,7 +103,10 @@ class __TwigTemplate_5a023412bf89501340540d92b8a2aa96 extends Template
                 </div>
 
                 <div class=\"check col-lg-6\">
-                    <form method=\"POST\" action=\"/dashboard\">
+                    <form method=\"POST\" action=\"";
+        // line 21
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion_connexions");
+        yield "\">
                 
                         <div class=\"col-lg-8\">
                             <label for=\"exampleInputEmail1\" class=\"form-label\">Adresse Email</label>
@@ -197,7 +200,7 @@ class __TwigTemplate_5a023412bf89501340540d92b8a2aa96 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  160 => 54,  154 => 52,  152 => 51,  149 => 50,  143 => 48,  141 => 47,  138 => 46,  132 => 44,  130 => 43,  96 => 11,  86 => 10,  74 => 5,  64 => 4,  41 => 1,);
+        return array (  163 => 54,  157 => 52,  155 => 51,  152 => 50,  146 => 48,  144 => 47,  141 => 46,  135 => 44,  133 => 43,  108 => 21,  96 => 11,  86 => 10,  74 => 5,  64 => 4,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -222,7 +225,7 @@ class __TwigTemplate_5a023412bf89501340540d92b8a2aa96 extends Template
                 </div>
 
                 <div class=\"check col-lg-6\">
-                    <form method=\"POST\" action=\"/dashboard\">
+                    <form method=\"POST\" action=\"{{ path('connexion_connexions') }}\">
                 
                         <div class=\"col-lg-8\">
                             <label for=\"exampleInputEmail1\" class=\"form-label\">Adresse Email</label>
