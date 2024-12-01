@@ -9,7 +9,7 @@ CREATE TABLE utilisateur (
     firstname_user VARCHAR(100) NOT NULL,
     password_user VARCHAR(60) NOT NULL,
     email_user VARCHAR(100) NOT NULL,
-    id_roles INT NOT NULL,
+    id_roles INT NOT NULL
 );
 
 CREATE TABLE services (
@@ -35,7 +35,7 @@ CREATE TABLE avis (
     description_avis TEXT NOT NULL,
     note_avis INT NOT NULL,
     email_avis VARCHAR(100) NOT NULL,
-    id_user INT NOT NULL,
+    id_user INT NOT NULL
 );
 
 CREATE TABLE animal (
@@ -46,7 +46,7 @@ CREATE TABLE animal (
     age INT NOT NULL,
     description TEXT NOT NULL,
     image VARCHAR(255) DEFAULT NULL,
-    id_habitat INT NOT NULL,
+    id_habitat INT NOT NULL
 );
 
 CREATE TABLE nourriture ( 
@@ -62,7 +62,7 @@ CREATE TABLE horaire (
     id_horaire INT PRIMARY KEY AUTO_INCREMENT,
     ouverture_horaire TIME NOT NULL,
     fermeture_horaire TIME NOT NULL,
-    id_user INT NOT NULL,
+    id_user INT NOT NULL
 );
 
 CREATE TABLE image ( 
@@ -75,7 +75,7 @@ CREATE TABLE jours (
     id_jours INT PRIMARY KEY AUTO_INCREMENT,
     name_jours VARCHAR(100) NOT NULL,
     statut_jours VARCHAR(100) NOT NULL,
-    id_services INT NOT NULL,
+    id_services INT NOT NULL
 );
 
 CREATE TABLE rapport (  
