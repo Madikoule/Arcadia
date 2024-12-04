@@ -6,7 +6,7 @@ use App\Repository\NourritureRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: NourritureRepository::class)]
+#[ORM\Entity(repositoryClass: Nourriture::class)]
 class Nourriture
 {
     #[ORM\Id]
@@ -19,6 +19,11 @@ class Nourriture
 
     #[ORM\Column(length: 255)]
     private ?string $description_nourriture = null;
+
+
+    #[ORM\Column(length: 255)]
+    private ?string $name_animal = null;
+
 
     #[ORM\Column(length: 255)]
     private ?string $grammage_nourriture = null;
@@ -62,6 +67,21 @@ class Nourriture
 
         return $this;
     }
+
+
+
+    public function getNameAnimal(): ?string
+    {
+        return $this->name_animal;
+    }
+
+    public function setNameAnimal(string $name_animal): static
+    {
+        $this->name_nourriture = $name_animal;
+
+        return $this;
+    }
+
 
     public function getGrammageNourriture(): ?string
     {

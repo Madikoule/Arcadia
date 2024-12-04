@@ -52,6 +52,7 @@ CREATE TABLE animal (
 CREATE TABLE nourriture ( 
     id_nourriture INT PRIMARY KEY AUTO_INCREMENT,
     name_nourriture VARCHAR(100) NOT NULL,
+    name_animal VARCHAR(255) NULL,
     description_nourriture VARCHAR(255) NOT NULL,
     grammage_nourriture VARCHAR(255) NOT NULL,
     date_passage DATETIME NOT NULL,
@@ -105,6 +106,20 @@ INSERT INTO animal (name_animal, race_animal, habitat_animal, age_animal, descri
 ('Kamel & Kamoss', 'Giraffa Camelopardalis', 'La Savane', 4, 'Les Girafes inséparables depuis le continent d`\`Afrique.', 1),
 ('Gibbon Oyopi', 'Hylobates lar', 'Forêts tropicales, Asie', 14, 'Présent dans le Zoo depuis l`\`âge de deux ans.', 2),
 ('Gasper le Crocodile', 'Crocodylus niloticus', 'Marais, rivières et lacs en Afrique subsaharienne', 35, 'Découvrez l`\`incontournable Niloticus du Zoo, une exception parmi nous.', 3);
+
+
+INSERT INTO nourriture (id_nourriture, nom_animal, name_nourriture, description_nourriture, grammage_nourriture, etat_animal, date_passage) VALUES
+(NULL, 'Gibbon à main blanche', 'Fruits', 'Un mélange de bananes, pommes et poires bien mûres', 300, 'Actif', '2024-12-01'),
+(NULL, 'Gibbon à main blanche', 'Insectes', 'Petits insectes séchés, riches en protéines', 100, 'Joue avec ses congénères', '2024-12-03'),
+(NULL, 'Girafe', 'Feuilles d\'acacia', 'Feuilles fraîches riches en nutriments, cueillies du matin', 1200, 'En bonne santé', '2024-12-02')
+(NULL, 'Girafe', 'Granulés spéciaux', 'Granulés enrichis en vitamines et minéraux', 800, 'Fatiguée', '2024-12-04'),
+(NULL, 'Crocodile', 'Viande crue', 'Morceaux de poulet frais, non assaisonnés', 1500, 'Agressif', '2024-12-03'),
+(NULL, 'Crocodile', 'Poissons', 'Carpes fraîches entières, avec écailles', 2000, 'Calme après repas', '2024-12-01'),
+(NULL, 'Lion', 'Viande de bœuf', 'Filets de bœuf frais, riches en protéines', 5000, 'Affamé', '2024-12-02'),
+(NULL, 'Lion', 'Viande de poulet', 'Poulet frais découpé en morceaux', 4000, 'Joue avec les lionceaux', '2024-12-03'),
+(NULL, 'Panda', 'Bambou', 'Jeunes pousses de bambou frais, riches en fibres', 7000, 'Paisible', '2024-12-01');
+
+
 
 INSERT INTO utilisateur (name_user, firstname_user, password_user, email_user, id_roles) VALUES
 ('Doucoure', 'Mady', 'arcadia123', 'madydouc@yahoo.com', 1),
