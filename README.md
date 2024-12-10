@@ -100,6 +100,7 @@ Voici les documents expliquant l'architecture et la base de données de votre ap
 
 - Diagramme de Séquence : (https://drive.google.com/file/d/1ElgkqYLrnLXig56-lBD52GYTnxAKzcVt/view?usp=drive_link)
 
+- Maquette design ui/ux : https://www.figma.com/design/QeutXWKbZLOeOntSOzaw56/Untitled?node-id=0-1&m=dev&t=DwZdsD8bBzRSgvR5-1   
 
 ## Installation et utilisation locale
 Si quelqu'un souhaite exécuter ce projet en local, voici les étapes à suivre :

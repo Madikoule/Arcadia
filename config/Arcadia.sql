@@ -1,13 +1,13 @@
 
 
-CREATE DATABASE IF NOT EXISTS arcadia;
+CREATE DATABASE  arcadia;
 USE arcadia;
 
 CREATE TABLE utilisateur (
     id_user INT PRIMARY KEY AUTO_INCREMENT,
-    name_user VARCHAR(50) NOT NULL,
+    name_user VARCHAR(100) NOT NULL,
     firstname_user VARCHAR(100) NOT NULL,
-    password_user VARCHAR(60) NOT NULL,
+    password_user VARCHAR(100) NOT NULL,
     email_user VARCHAR(100) NOT NULL,
     id_roles INT NOT NULL
 );
@@ -46,6 +46,7 @@ CREATE TABLE animal (
     age INT NOT NULL,
     description TEXT NOT NULL,
     image VARCHAR(255) DEFAULT NULL,
+    title VARCHAR(255) NOT NULL,
     id_habitat INT NOT NULL
 );
 

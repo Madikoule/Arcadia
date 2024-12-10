@@ -16,15 +16,15 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Message[]    findAll()
  * @method Message[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class MessageRepository extends ServiceEntityRepository
+class NourritureRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Nourriture ::class);
+        parent::__construct($registry, Nourriture::class);
     }
 
 //    /**
-//     * @return Message[] Returns an array of Message objects
+//     * @return Message[] Returns an array of Nourriture objects
 //     */
 //    public function findByExampleField($value): array
 //    {
