@@ -18,7 +18,7 @@
             {% for habitat in habitats %}
                 <a href="..">
                     <figure class="figure">
-                        <img src="{{ habitat.imageHabitat }}" class="figure-img img-fluid rounded" alt="{{ habitat.nameHabitat }}">
+                        <img src="{{ asset( habitat.imageHabitat) }}" class="figure-img img-fluid rounded" alt="{{ habitat.nameHabitat }}">
                         <figcaption class="figure-caption">{{ habitat.nameHabitat }}</figcaption>
                     </figure>
                 </a>

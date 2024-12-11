@@ -93,7 +93,7 @@ class __TwigTemplate_bd3704b2b5b97e21a2bde0359687c88a extends Template
                     <figure class=\"figure\">
                         <img src=\"";
             // line 21
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["habitat"], "imageHabitat", [], "any", false, false, false, 21), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(CoreExtension::getAttribute($this->env, $this->source, $context["habitat"], "imageHabitat", [], "any", false, false, false, 21)), "html", null, true);
             yield "\" class=\"figure-img img-fluid rounded\" alt=\"";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["habitat"], "nameHabitat", [], "any", false, false, false, 21), "html", null, true);
             yield "\">
@@ -173,7 +173,7 @@ class __TwigTemplate_bd3704b2b5b97e21a2bde0359687c88a extends Template
             {% for habitat in habitats %}
                 <a href=\"..\">
                     <figure class=\"figure\">
-                        <img src=\"{{ habitat.imageHabitat }}\" class=\"figure-img img-fluid rounded\" alt=\"{{ habitat.nameHabitat }}\">
+                        <img src=\"{{ asset( habitat.imageHabitat) }}\" class=\"figure-img img-fluid rounded\" alt=\"{{ habitat.nameHabitat }}\">
                         <figcaption class=\"figure-caption\">{{ habitat.nameHabitat }}</figcaption>
                     </figure>
                 </a>

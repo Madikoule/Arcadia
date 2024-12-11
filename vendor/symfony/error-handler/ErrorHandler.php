@@ -55,7 +55,6 @@ class ErrorHandler
         \E_USER_DEPRECATED => 'User Deprecated',
         \E_NOTICE => 'Notice',
         \E_USER_NOTICE => 'User Notice',
-        \E_STRICT => 'Runtime Notice',
         \E_WARNING => 'Warning',
         \E_USER_WARNING => 'User Warning',
         \E_COMPILE_WARNING => 'Compile Warning',
@@ -68,12 +67,12 @@ class ErrorHandler
         \E_CORE_ERROR => 'Core Error',
     ];
 
+
     private array $loggers = [
         \E_DEPRECATED => [null, LogLevel::INFO],
         \E_USER_DEPRECATED => [null, LogLevel::INFO],
         \E_NOTICE => [null, LogLevel::WARNING],
         \E_USER_NOTICE => [null, LogLevel::WARNING],
-        \E_STRICT => [null, LogLevel::WARNING],
         \E_WARNING => [null, LogLevel::WARNING],
         \E_USER_WARNING => [null, LogLevel::WARNING],
         \E_COMPILE_WARNING => [null, LogLevel::WARNING],
@@ -85,6 +84,8 @@ class ErrorHandler
         \E_ERROR => [null, LogLevel::CRITICAL],
         \E_CORE_ERROR => [null, LogLevel::CRITICAL],
     ];
+
+
 
     private int $thrownErrors = 0x1FFF; // E_ALL - E_DEPRECATED - E_USER_DEPRECATED
     private int $scopedErrors = 0x1FFF; // E_ALL - E_DEPRECATED - E_USER_DEPRECATED
