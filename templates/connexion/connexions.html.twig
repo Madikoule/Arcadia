@@ -1,63 +1,64 @@
 {% extends 'base.html.twig' %}
 
-
-    {% block title %}
-        Connexion
-    {% endblock %}
-
-
+{% block title %}Connexion{% endblock %}
 
 {% block body %}
 
+
 <main>
-    
-        <div class="container">
-            <div class="divider"></div>
-                <div class="heading">
-                    <h2>Connexion</h2>
+    <div class="container">
+        <div class="divider"></div>
+        <div class="heading">
+            <h2>Connexion</h2>
+        </div>
+
+        {% if error %}
+            <div class="alert alert-danger">
+                {% if error.messageKey is defined %}
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                {% else %}
+                    {{ error }}
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}">{{ message }}</div>
+            {% endfor %}
+        {% endfor %}
+
+        <div class="check col-lg-6">
+            <form action="{{ path('connexion_connexions') }}" method="POST">
+                <div class="col-lg-8">
+                    <label for="email" class="form-label">Adresse Email</label>
+                    <input type="email" name="email" class="form-control" id="email" value="{{ last_username|default('') }}" required autofocus>
+                    <div id="emailHelp" class="form-text">Nous ne partagerons jamais votre email avec qui que ce soit.</div>
                 </div>
 
-                <div class="check col-lg-6">
-                    <form method="POST" action="{{ path('connexion_connexions') }}">
+                <div class="col-lg-8">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" name="password" class="form-control" id="password" required><br>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="remember_me" name="_remember_me">
+                        <label class="form-check-label" for="remember_me">Se souvenir de moi</label>
+                    </div>
+                </div>
                 
-                        <div class="col-lg-8">
-                            <label for="exampleInputEmail1" class="form-label">Adresse Email</label>
-                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">Nous ne partagerons jamais votre email avec qui que ce soit.</div>
-                        </div>
-
-                        <div class="col-lg-8">
-                            <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
-                            <input type="password" name="password" class="form-control" id="exampleInputPassword1"><br>
-                        </div>
-
-                        <div class="col-lg-8">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Cochez-moi</label>
-                        </div>
-                        
-                        <div class="col-lg-8">
-                            <button type="submit" class="btn btn-warning">Valider</button>
-                        </div>
-
-                        {% if error is defined %}
-                            <div class="alert alert-danger mt-3 col-lg-8">{{ error|escape }}</div>
-                        {% endif %}
-                        
-                        {% if success is defined %}
-                            <div class="alert alert-success mt-3 col-lg-8">{{ success|escape }}</div>
-                        {% endif %}
-                        
-                        {% if error %}
-                            <div class="alert alert-danger mt-3 col-lg-8">{{ error }}</div>
-                        {% endif %}
-                        </div>
-                    </form>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                
+                <div class="col-lg-8">
+                    <button type="submit" class="btn btn-warning">Se connecter</button>
                 </div>
+            </form>
+
+            <div class="col-lg-8 mt-3">
+                <p><a href="{{ path('app_inscription') }}" class="text-warning">Inscrivez-vous</a></p>
             </div>
         </div>
     </div>
-
 </main>
-
 {% endblock %}

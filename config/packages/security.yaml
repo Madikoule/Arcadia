@@ -2,6 +2,11 @@ security:
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+    role_hierarchy:
+        ROLE_VETERINAIRE: [ROLE_EMPLOYE]
+        ROLE_ADMIN: [ROLE_VETERINAIRE]
+
+
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         # used to reload user from session & other features (e.g. switch_user)
@@ -17,10 +22,20 @@ security:
     
         main:
             lazy: true
-            pattern: ^/
-            stateless: true  # Utilisation d'un authenticator stateless
+            pattern: ^/connexion$
+            stateless: false  # Utilisation d'un authenticator stateless
             custom_authenticator: App\Security\StatelessAuthenticator
             provider: app_user_provider
+            form_login:
+                login_path: connexion_connexions
+                check_path: connexion_connexions
+                username_parameter: email         # Paramètre pour l'email
+                password_parameter: password     # Paramètre pour le mot de passe
+                default_target_path: app_dashboard  # Remplacez par votre route de dashboard
+            logout:
+                path: app_logout
+                target: connexion_connexions
+
             # Pas de gestion de session (stateless)
 
 
@@ -34,11 +49,11 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/contact, }
         # Règles d'accès pour d'autres routes
-        - { path: ^/dashboard, roles: ROLE }  # Exemple de protection de la page de tableau de bord
+        - { path: ^/dashboard, roles: ROLE_USER  }
 
 when@test:
     security:

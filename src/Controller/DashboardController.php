@@ -15,20 +15,17 @@ class DashboardController extends AbstractController
     public function index(Request $request,CompteurService $compteurService): Response
     {
 
-        $user = $this->getUser(); // Récupère l'utilisateur actuellement authentifié
-    if (!$user) {
 
-        return $this->redirectToRoute('connexion_connexions');
-    }
+        if ($this->getUser()) {
+            $this->addFlash('success', 'Connexion réussie');
+        }
+
     
         // Incrémenter le compteur de vues
         $vues = $compteurService->ajouterVue();
-
         // Obtenir le nombre total de vues
         $total = $compteurService->nombreVues();
-
         $annee = date('Y');
-
         $annee_selection = $request->query->get('annee', $annee);
 
 
@@ -40,7 +37,8 @@ class DashboardController extends AbstractController
         
         ]);
     }
+
+
 }
 
-    
 

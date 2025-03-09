@@ -14,13 +14,8 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id_user = null;
 
-    #[ORM\Column(length: 100)]
-    private ?string $name = null;
-
-    #[ORM\Column(length: 100)]
-    private ?string $firstname = null;
 
     #[ORM\Column(length: 100)]
     private ?string $password = null;
@@ -29,11 +24,11 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $email = null;
 
     #[ORM\Column(type: 'json')]
-    private $roles = [];
+    private array $roles = ['ROLE_USER'];
 
-    public function getId(): ?int
+    public function getIdUser(): ?int
     {
-        return $this->id;
+        return $this->id_user;
     }
 
     public function getUserIdentifier(): string
@@ -42,36 +37,12 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
         // get pour recuperer des donnée
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-        // set envoi des donnée
-    public function setNameUser(string $name): static
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    public function getFirstname(): ?string
-    {
-        return $this->firstname;
-    }
-
-    public function setFirstname(string $firstname): static
-    {
-        $this->firstname = $firstname;
-
-        return $this;
-    }
-
     public function getPassword(): ?string
     {
         return $this->password;
     }
 
-    public function setPassword(string $password): static
+    public function setPassword(string $password): self
     {
         $this->password = $password;
 
@@ -85,7 +56,7 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
 
-    public function setEmail(string $email): static
+    public function setEmail(string $email): self
     {
         $this->email = $email;
 
@@ -95,27 +66,21 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getRoles(): array
     {
-        $roles = $this->roles ?: [];
-
-        return array_merge($roles, ['ROLE_USER']);
-    }
-    
-    public function setRoles(array $roles): self
-    {
-        
-        $this->roles = $roles;
-
-        return $this;
+        // Récupérez le nom du rôle depuis la relation        
+        return $this->roles;
     }
 
-    public function getSalt(): ?string
-    {
-        return null;
-    }
 
     public function eraseCredentials(): void
     {
+        // Effacez les données sensibles si nécessaire
+    }
 
+    //  setter pour la relation 
+    public function setRole(array $roles): self
+    {
+        $this->roles = $roles;
+        return $this;
     }
 
 }

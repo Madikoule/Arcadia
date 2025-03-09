@@ -29,16 +29,12 @@ class ContactController extends AbstractController
 
         // Récupération des données du formulaire
         $name = htmlspecialchars(trim($request->request->get('name', '')));
-        $firstname = htmlspecialchars(trim($request->request->get('firstname', '')));
         $email = htmlspecialchars(trim($request->request->get('email', '')));
         $description = htmlspecialchars(trim($request->request->get('description', '')));
 
         // Validation des champs
         if (empty($name)) {
             $response['errors']['nameError'] = 'Veuillez entrer votre nom.';
-        }
-        if (empty($firstname)) {
-            $response['errors']['firstnameError'] = 'Veuillez entrer votre prénom.';
         }
         if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $response['errors']['emailError'] = 'Veuillez entrer une adresse e-mail valide.';

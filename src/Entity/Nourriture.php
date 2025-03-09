@@ -35,7 +35,7 @@ class Nourriture
     private ?string $etat_animal = null;
 
     #[ORM\ManyToOne(targetEntity: Habitat::class, inversedBy: "nourriture")]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(name: 'id_habitat',referencedColumnName: 'id' ,nullable: false)]
     private ?Habitat $habitat = null;
 
 
