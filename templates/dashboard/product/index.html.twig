@@ -1,0 +1,38 @@
+{# templates/product/index.html.twig #}
+
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('Assets/css/new.css') }}">
+{% endblock %}
+
+{% block title %}Listing{% endblock %}
+
+
+{% block body %}
+    <div class='product'>
+        <h1>Liste d'Animaux</h1>
+        <a href="{{ path('product_create') }}">Créer un produit</a>
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.date }} €</td>
+                <td>
+                    <a href="{{ path('product_edit', {'id': product.id}) }}">Modifier</a>
+                    <form method="post" action="{{ path('product_delete', {'id': product.id}) }}" style="display:inline;">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ product.id) }}">
+                        <button type="submit">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}

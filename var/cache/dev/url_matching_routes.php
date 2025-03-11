@@ -26,6 +26,8 @@ return [
         '/employ' => [[['_route' => 'app_employ_', '_controller' => 'App\\Controller\\EmployéController::index'], null, null, null, true, false, null]],
         '/habitat' => [[['_route' => 'habitat_habitats', '_controller' => 'App\\Controller\\HabitatController::index'], null, null, null, false, false, null]],
         '/inscription' => [[['_route' => 'app_inscription', '_controller' => 'App\\Controller\\InscriptionController::index'], null, null, null, false, false, null]],
+        '/index' => [[['_route' => 'product_index', '_controller' => 'App\\Controller\\ProductController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/create' => [[['_route' => 'product_create', '_controller' => 'App\\Controller\\ProductController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/rapport' => [[['_route' => 'app_rapport', '_controller' => 'App\\Controller\\RapportController::index'], null, null, null, false, false, null]],
         '/service' => [[['_route' => 'service_services', '_controller' => 'App\\Controller\\ServiceController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\UtilisateurController::register'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
@@ -50,6 +52,10 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
+                .'|/([^/]++)/(?'
+                    .'|edit(*:186)'
+                    .'|delete(*:200)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -59,8 +65,10 @@ return [
         116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        159 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        186 => [[['_route' => 'product_edit', '_controller' => 'App\\Controller\\ProductController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        200 => [
+            [['_route' => 'product_delete', '_controller' => 'App\\Controller\\ProductController::delete'], ['id'], ['POST' => 0], null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

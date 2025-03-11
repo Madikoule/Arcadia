@@ -108,9 +108,10 @@ class __TwigTemplate_cdf5b17f47f5c49a2c931b7bbe107563 extends Template
                     </button>
                     <div class=\"collapse show\" id=\"home-collapse\">
                         <ul class=\"btn-toggle-nav list-unstyled fw-normal pb-1 small\">
-                            <li><a href=\"#\" class=\"link-body-emphasis d-inline-flex text-decoration-none rounded\">Habitat</a></li>
-                            <li><a href=\"#\" class=\"link-body-emphasis d-inline-flex text-decoration-none rounded\">Services</a></li>
-                            <li><a href=\"#\" class=\"link-body-emphasis d-inline-flex text-decoration-none rounded\">Animaux</a></li>
+                            <li><a href=\"";
+        // line 24
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_index");
+        yield "\" class=\"link-body-emphasis d-inline-flex text-decoration-none rounded\">LISTING</a></li>
                         </ul>
                     </div>
                 </li>
@@ -148,21 +149,21 @@ class __TwigTemplate_cdf5b17f47f5c49a2c931b7bbe107563 extends Template
                         <div class=\"col-md-4\">
                             <ul class=\"list-group\">
                                 ";
-        // line 63
+        // line 61
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable(range(0, 4));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 64
+            // line 62
             yield "                                    <a class=\"list-group-item ";
-            yield (((((isset($context["annee"]) || array_key_exists("annee", $context) ? $context["annee"] : (function () { throw new RuntimeError('Variable "annee" does not exist.', 64, $this->source); })()) - $context["i"]) == (isset($context["annee_selection"]) || array_key_exists("annee_selection", $context) ? $context["annee_selection"] : (function () { throw new RuntimeError('Variable "annee_selection" does not exist.', 64, $this->source); })()))) ? ("active") : (""));
+            yield (((((isset($context["annee"]) || array_key_exists("annee", $context) ? $context["annee"] : (function () { throw new RuntimeError('Variable "annee" does not exist.', 62, $this->source); })()) - $context["i"]) == (isset($context["annee_selection"]) || array_key_exists("annee_selection", $context) ? $context["annee_selection"] : (function () { throw new RuntimeError('Variable "annee_selection" does not exist.', 62, $this->source); })()))) ? ("active") : (""));
             yield "\" 
                                     href=\"";
-            // line 65
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard", ["annee" => ((isset($context["annee"]) || array_key_exists("annee", $context) ? $context["annee"] : (function () { throw new RuntimeError('Variable "annee" does not exist.', 65, $this->source); })()) - $context["i"])]), "html", null, true);
+            // line 63
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashboard", ["annee" => ((isset($context["annee"]) || array_key_exists("annee", $context) ? $context["annee"] : (function () { throw new RuntimeError('Variable "annee" does not exist.', 63, $this->source); })()) - $context["i"])]), "html", null, true);
             yield "\">
                                         ";
-            // line 66
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((isset($context["annee"]) || array_key_exists("annee", $context) ? $context["annee"] : (function () { throw new RuntimeError('Variable "annee" does not exist.', 66, $this->source); })()) - $context["i"]), "html", null, true);
+            // line 64
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((isset($context["annee"]) || array_key_exists("annee", $context) ? $context["annee"] : (function () { throw new RuntimeError('Variable "annee" does not exist.', 64, $this->source); })()) - $context["i"]), "html", null, true);
             yield "
                                     </a>
                                 ";
@@ -170,7 +171,7 @@ class __TwigTemplate_cdf5b17f47f5c49a2c931b7bbe107563 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 69
+        // line 67
         yield "                            </ul>
                         </div>
                     </div>
@@ -180,12 +181,12 @@ class __TwigTemplate_cdf5b17f47f5c49a2c931b7bbe107563 extends Template
                     <div class=\"card\" style=\"width: 400px;\">
                         <div class=\"card-body\">
                             <strong style=\"font-size:3em;\">";
-        // line 77
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 77, $this->source); })()), "html", null, true);
+        // line 75
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 75, $this->source); })()), "html", null, true);
         yield "</strong>
                             Visite";
-        // line 78
-        yield ((((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 78, $this->source); })()) > 1)) ? ("s") : (""));
+        // line 76
+        yield ((((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 76, $this->source); })()) > 1)) ? ("s") : (""));
         yield " total
                         </div>
                     </div>
@@ -201,10 +202,10 @@ class __TwigTemplate_cdf5b17f47f5c49a2c931b7bbe107563 extends Template
                             <div class=\"card-body\"></div>
                             <h4>Compteur de vue</h4>
                             <p>Il y a ";
-        // line 92
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["vues"]) || array_key_exists("vues", $context) ? $context["vues"] : (function () { throw new RuntimeError('Variable "vues" does not exist.', 92, $this->source); })()), "html", null, true);
+        // line 90
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["vues"]) || array_key_exists("vues", $context) ? $context["vues"] : (function () { throw new RuntimeError('Variable "vues" does not exist.', 90, $this->source); })()), "html", null, true);
         yield " visite";
-        yield ((((isset($context["vues"]) || array_key_exists("vues", $context) ? $context["vues"] : (function () { throw new RuntimeError('Variable "vues" does not exist.', 92, $this->source); })()) > 1)) ? ("s") : (""));
+        yield ((((isset($context["vues"]) || array_key_exists("vues", $context) ? $context["vues"] : (function () { throw new RuntimeError('Variable "vues" does not exist.', 90, $this->source); })()) > 1)) ? ("s") : (""));
         yield " sur le site</p>
                         </div>
                     </div>
@@ -229,7 +230,7 @@ class __TwigTemplate_cdf5b17f47f5c49a2c931b7bbe107563 extends Template
 
             <div class=\"fermer\">
                 <a href=\"";
-        // line 115
+        // line 113
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("connexion_connexions");
         yield "\">
                     <button type=\"button\" class=\"btn btn-warning\">Se déconnecter</button>
@@ -267,7 +268,7 @@ class __TwigTemplate_cdf5b17f47f5c49a2c931b7bbe107563 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  233 => 115,  205 => 92,  188 => 78,  184 => 77,  174 => 69,  165 => 66,  161 => 65,  156 => 64,  152 => 63,  94 => 7,  84 => 6,  64 => 4,  41 => 1,);
+        return array (  234 => 113,  206 => 90,  189 => 76,  185 => 75,  175 => 67,  166 => 64,  162 => 63,  157 => 62,  153 => 61,  113 => 24,  94 => 7,  84 => 6,  64 => 4,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -295,9 +296,7 @@ class __TwigTemplate_cdf5b17f47f5c49a2c931b7bbe107563 extends Template
                     </button>
                     <div class=\"collapse show\" id=\"home-collapse\">
                         <ul class=\"btn-toggle-nav list-unstyled fw-normal pb-1 small\">
-                            <li><a href=\"#\" class=\"link-body-emphasis d-inline-flex text-decoration-none rounded\">Habitat</a></li>
-                            <li><a href=\"#\" class=\"link-body-emphasis d-inline-flex text-decoration-none rounded\">Services</a></li>
-                            <li><a href=\"#\" class=\"link-body-emphasis d-inline-flex text-decoration-none rounded\">Animaux</a></li>
+                            <li><a href=\"{{ path('product_index') }}\" class=\"link-body-emphasis d-inline-flex text-decoration-none rounded\">LISTING</a></li>
                         </ul>
                     </div>
                 </li>
